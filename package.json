@@ -2,9 +2,9 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "consumers:web:setup": "cd ./consumers && git clone git@github.com:cremalab/app-web.git && cd app-web && npm i",
-    "consumers:web:update": "cd ./consumers/app-web && git pull origin develop && npm ci && npm i -D ../../packages/app-scripts-web",
-    "test:consumers:web:typescript": "cd ./consumers/app-web && npm run test:types"
+    "setup:web": "git submodule update --init && cd ./consumers/app-web && npm i && npm i -D ../../packages/scripts-web",
+    "update:web": "git pull --recurse-submodules && cd ./consumers/app-web && npm i",
+    "test:web:typescript": "cd ./consumers/app-web && npm run test:types"
   },
   "devDependencies": {
     "lerna": "^3.20.2"
