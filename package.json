@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "publish": "lerna publish",
     "setup:web": "git submodule update --init && cd ./consumers/app-web && npm i && npm i -D ../../packages/scripts-web",

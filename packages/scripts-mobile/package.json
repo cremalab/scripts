@@ -10,5 +10,6 @@
     "@cremalab/scripts": "^0.1.1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "1aa4b7c73cf546e192df887276957fb9ccbf0f85"
 }
