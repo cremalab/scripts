@@ -1,6 +1,7 @@
 {
   "version": "0.1.2",
   "npmClient": "npm",
+  "npmClientArgs": ["--access public"],
   "packages": [
     "packages/*"
   ]
