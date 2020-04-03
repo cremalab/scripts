@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "publish": "lerna publish",
     "setup:web": "git submodule update --init && cd ./consumers/app-web && npm i && npm i -D ../../packages/scripts-web",
     "update:web": "git pull --recurse-submodules && cd ./consumers/app-web && npm i",
     "test:web:typescript": "cd ./consumers/app-web && npm run test:types"
