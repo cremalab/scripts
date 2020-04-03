@@ -1,0 +1,6 @@
+{
+  "extends": "@cremalab/app-scripts/configs/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+  }
+}
