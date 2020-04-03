@@ -1,5 +1,5 @@
 {
-  "extends": "@cremalab/app-scripts/configs/tsconfig.json",
+  "extends": "@cremalab/scripts/configs/tsconfig.json",
   "compilerOptions": {
     "jsx": "react-native",
     "lib": ["dom", "esnext"],
