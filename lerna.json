@@ -1,9 +1,6 @@
 {
   "version": "0.1.4",
   "npmClient": "npm",
-  "publishConfig": {
-    "access": "public"
-  },
   "packages": [
     "packages/*"
   ]
