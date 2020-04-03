@@ -1,3 +1,0 @@
-[submodule "consumers/app-web"]
-	path = consumers/app-web
-	url = git@github.com:cremalab/app-web.git
