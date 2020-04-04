@@ -16,12 +16,20 @@ process.on("unhandledRejection", (err) => {
 })
 
 const args = process.argv.slice(2)
-
 const scriptIndex = args.findIndex((x) => x === "new")
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex]
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : []
 
-if (["new"].includes(script)) {
+const commands = [
+  { args: ["new", "type"], binary: "cremalab-scripts" },
+  { args: ["new", "util"], binary: "cremalab-scripts" },
+]
+
+const command = commands.find(
+  (com) => com.args[0] === args[0] && com.args[1] === args[1],
+)
+
+if (command && command.binary === "cremalab-scripts") {
   const result = spawn.sync(
     "node",
     nodeArgs

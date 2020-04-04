@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import i from "inflection"
+const i = require("inflection")
 
 module.exports = {
   prompt: ({ prompter }) => {

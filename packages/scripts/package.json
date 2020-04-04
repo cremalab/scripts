@@ -17,7 +17,8 @@
     "clean": "rm -rf ./dist",
     "compile": "tsc",
     "prepack": "npm run build",
-    "test:pack": "npm pack --dry-run"
+    "test:pack": "npm pack --dry-run",
+    "pack": "npm pack"
   },
   "author": "",
   "license": "ISC",

@@ -1,13 +1,14 @@
 {
   "name": "@cremalab/scripts-web",
   "version": "0.1.6",
-  "description": "",
+  "description": "Scripts for cremalab/app-web",
   "files": [
     "_templates",
     "configs",
     "dist"
   ],
   "bin": {
+    "cremalab-scripts": "node_modules/@cremalab/scripts/dist/bin/scripts.js",
     "cremalab-scripts-web": "dist/bin/scripts.js"
   },
   "scripts": {
@@ -16,7 +17,8 @@
     "clean": "rm -rf ./dist",
     "compile": "tsc",
     "prepack": "npm run build",
-    "test:pack": "npm pack --dry-run"
+    "test:pack": "npm pack --dry-run",
+    "pack": "npm pack"
   },
   "dependencies": {
     "@cremalab/scripts": "^0.1.6",
@@ -25,6 +27,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "directory": "packages/scripts-web",
+    "url": "https://github.com/cremalab/scripts"
+  },
   "gitHead": "88cd781a5facaa0e7ce3f208b5a021af5bd3d353",
   "publishConfig": {
     "access": "public"
