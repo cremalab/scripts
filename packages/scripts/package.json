@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index",
   "bin": {
-    "cremalab-scripts": "dist/scripts.js"
+    "cremalab-scripts": "dist/bin/scripts.js"
   },
   "files": [
     "_templates",

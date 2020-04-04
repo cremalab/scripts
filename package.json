@@ -2,17 +2,26 @@
   "private": false,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "clean": "lerna clean",
     "build": "lerna run build",
-    "start": "lerna run start --stream --parallel",
+    "clean": "lerna clean",
     "publish": "lerna publish",
     "setup:web": "git submodule update --init && cd ./consumers/app-web && npm i && npm i -D ../../packages/scripts-web",
-    "update:web": "git pull --recurse-submodules && cd ./consumers/app-web && npm i",
+    "start": "lerna run start --stream --parallel",
+    "test:lint": "eslint -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'",
+    "test:lint:fix": "npm run test:lint -- --fix",
+    "test:pack": "lerna run test:pack --stream",
     "test:web:typescript": "cd ./consumers/app-web && npm run test:types",
-    "test:pack": "lerna run test:pack --stream"
+    "update:web": "git pull --recurse-submodules && cd ./consumers/app-web && npm i"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
     "lerna": "^3.20.2",
+    "prettier": "^2.0.2",
     "typescript": "^3.8.3"
   },
   "name": "scripts"

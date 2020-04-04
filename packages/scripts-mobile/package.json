@@ -10,7 +10,7 @@
     "dist"
   ],
   "bin": {
-    "cremalab-scripts-mobile": "./bin/scripts.js"
+    "cremalab-scripts-mobile": "dist/bin/scripts.js"
   },
   "scripts": {
     "start": "npm run clean && npm run compile -- -w",
@@ -21,7 +21,7 @@
     "test:pack": "npm pack --dry-run"
   },
   "dependencies": {
-    "@cremalab/scripts": "file:../scripts",
+    "@cremalab/scripts": "^0.1.6",
     "cross-spawn": "^7.0.1",
     "hygen": "^5.0.3"
   },
