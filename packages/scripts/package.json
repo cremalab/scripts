@@ -2,14 +2,33 @@
   "name": "@cremalab/scripts",
   "version": "0.1.6",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index",
+  "bin": {
+    "cremalab-scripts": "dist/scripts.js"
+  },
+  "files": [
+    "_templates",
+    "configs",
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run clean && npm run compile -- -w",
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build"
   },
   "author": "",
   "license": "ISC",
   "gitHead": "88cd781a5facaa0e7ce3f208b5a021af5bd3d353",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.1",
+    "hygen": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.1"
   }
 }

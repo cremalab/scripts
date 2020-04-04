@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.build.json",
+
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@cremalab/*": ["packages/*/src"]
+    }
+  }
+}

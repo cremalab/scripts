@@ -1,12 +1,19 @@
 {
   "private": false,
   "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
+    "build": "lerna run build",
+    "start": "lerna run start --stream --parallel",
     "publish": "lerna publish",
     "setup:web": "git submodule update --init && cd ./consumers/app-web && npm i && npm i -D ../../packages/scripts-web",
     "update:web": "git pull --recurse-submodules && cd ./consumers/app-web && npm i",
-    "test:web:typescript": "cd ./consumers/app-web && npm run test:types"
+    "test:web:typescript": "cd ./consumers/app-web && npm run test:types",
+    "test:pack": "lerna run test:pack --stream"
   },
   "devDependencies": {
-    "lerna": "^3.20.2"
-  }
+    "lerna": "^3.20.2",
+    "typescript": "^3.8.3"
+  },
+  "name": "scripts"
 }
