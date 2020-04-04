@@ -16,12 +16,21 @@ process.on("unhandledRejection", (err) => {
 })
 
 const args = process.argv.slice(2)
-
 const scriptIndex = args.findIndex((x) => x === "new")
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex]
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : []
 
-if (["new"].includes(script)) {
+const commands = [
+  { args: ["new", "component"], binary: "cremalab-scripts-web" },
+  { args: ["new", "type"], binary: "cremalab-scripts" },
+  { args: ["new", "util"], binary: "cremalab-scripts" },
+]
+
+const command = commands.find(
+  (com) => com.args[0] === args[0] && com.args[1] === args[1],
+)
+
+if (command && command.binary === "cremalab-scripts-web") {
   const result = spawn.sync(
     "node",
     nodeArgs
@@ -29,6 +38,27 @@ if (["new"].includes(script)) {
       .concat(args.slice(scriptIndex + 1)),
     { stdio: "inherit" },
   )
+  if (result.signal) {
+    if (result.signal === "SIGKILL") {
+      console.log(
+        "The build failed because the process exited too early. " +
+          "This probably means the system ran out of memory or someone called " +
+          "`kill -9` on the process.",
+      )
+    } else if (result.signal === "SIGTERM") {
+      console.log(
+        "The build failed because the process exited too early. " +
+          "Someone might have called `kill` or `killall`, or the system could " +
+          "be shutting down.",
+      )
+    }
+    process.exit(1)
+  }
+  process.exit(result.status || undefined)
+} else if (command && command.binary === "cremalab-scripts") {
+  const result = spawn.sync("cremalab-scripts", command.args, {
+    stdio: "inherit",
+  })
   if (result.signal) {
     if (result.signal === "SIGKILL") {
       console.log(

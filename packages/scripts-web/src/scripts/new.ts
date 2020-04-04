@@ -1,7 +1,6 @@
 import path from "path"
+import { args, pathConsumer, pathPackage } from "@cremalab/scripts"
 import spawn from "cross-spawn"
-import { args } from "../utils/args"
-import { pathConsumer, pathPackage } from "../utils/paths"
 
 const pathPackageTemplates = path.join(pathPackage(), "_templates")
 const pathConsumerTemplates = path.join(pathConsumer(), "_templates")

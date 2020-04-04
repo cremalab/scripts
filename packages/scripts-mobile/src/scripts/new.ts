@@ -1,14 +1,10 @@
-console.log("NEW", process.argv)
-export const foo = 1
+import path from "path"
+import { args, pathConsumer, pathPackage } from "@cremalab/scripts"
+import spawn from "cross-spawn"
 
-// import spawn from "cross-spawn"
-// import { pathPackage, pathConsumer } from "../../../internal/config/paths"
-// import { args } from "../../../internal/utils/args"
-// import path from "path"
+const pathPackageTemplates = path.join(pathPackage(), "_templates")
+const pathConsumerTemplates = path.join(pathConsumer(), "_templates")
 
-// const pathPackageTemplates = path.join(pathPackage(), "_templates")
-// const pathConsumerTemplates = path.join(pathConsumer(), "_templates")
-
-// spawn.sync("ln", ["-sf", pathPackageTemplates, pathConsumerTemplates])
-// spawn.sync("hygen", [args()[0], "new"], { stdio: "inherit" })
-// spawn.sync("rm", [pathConsumerTemplates])
+spawn.sync("ln", ["-sf", pathPackageTemplates, pathConsumerTemplates])
+spawn.sync("hygen", [args()[0], "new"], { stdio: "inherit" })
+spawn.sync("rm", [pathConsumerTemplates])

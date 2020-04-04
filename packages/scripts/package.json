@@ -3,6 +3,7 @@
   "version": "0.1.6",
   "description": "",
   "main": "dist/index",
+  "types": "dist/index",
   "bin": {
     "cremalab-scripts": "dist/bin/scripts.js"
   },

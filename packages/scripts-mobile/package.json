@@ -10,7 +10,8 @@
     "dist"
   ],
   "bin": {
-    "cremalab-scripts-mobile": "dist/bin/scripts.js"
+    "cremalab-scripts": "node_modules/@cremalab/scripts/dist/bin/scripts.js",
+    "cremalab-scripts-mobile": "dist/scripts-mobile/src/bin/scripts.js"
   },
   "scripts": {
     "start": "npm run clean && npm run compile -- -w",
