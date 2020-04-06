@@ -17,11 +17,11 @@ cd ../../
 
 print "3. Lerna bootstrap..."
 
-sudo lerna bootstrap
+sudo npx lerna bootstrap
 
 print "4. Run Unit Tests..."
 
-sudo jest --detectOpenHandles -i
+sudo npx jest --detectOpenHandles -i
 
 print "5. Teardown links..."
 
