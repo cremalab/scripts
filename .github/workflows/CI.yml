@@ -10,6 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+        with:
+          submodules: true
       - uses: actions/cache@v1
         with:
           path: ~/.npm
@@ -17,7 +19,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - run: npm ci
-      - run: npm run test:web:generators
+      - run: sudo npm run test:web:generators
 
   # Coverage:
   #   runs-on: ubuntu-latest
