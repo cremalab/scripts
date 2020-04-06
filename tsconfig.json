@@ -17,7 +17,7 @@
     "target": "es5",
     "baseUrl": ".",
     "paths": {
-      "@cremalab/scripts": ["packages/scripts/src"]
+      "@cremalab/scripts": ["packages/scripts"]
     }
   },
 

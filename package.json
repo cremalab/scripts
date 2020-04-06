@@ -3,26 +3,46 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
+    "link": "lerna link",
     "clean": "lerna clean",
     "publish": "lerna publish",
+    "setup": "npm run build && npm run bootstrap && npm run link",
     "setup:web": "git submodule update --init && cd ./consumers/app-web && npm i && npm i -D ../../packages/scripts-web",
     "start": "lerna run start --stream --parallel",
+    "test:ci": ". ./shell/ci.sh",
+    "test:web:generators": ". ./shell/web/testGenerators.sh",
+    "test:unit": "jest --detectOpenHandles -i",
+    "test:unit:watch": "npm run test:unit -- --watch",
     "test:lint": "eslint -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'",
     "test:lint:fix": "npm run test:lint -- --fix",
     "test:pack": "lerna run test:pack --stream",
-    "test:web:typescript": "cd ./consumers/app-web && npm run test:types",
+    "test:web:setup": "npm run setup && cd packages/scripts-web && npm link && cd ../../consumers/app-web && npm link @cremalab/scripts-web",
+    "test:web:teardown": "cd consumers/app-web && npm unlink --no-save @cremalab/scripts-web && cd ../../packages/scripts-web && npm unlink",
     "update:web": "git pull --recurse-submodules && cd ./consumers/app-web && npm i"
   },
   "devDependencies": {
+    "@types/cross-spawn": "^6.0.1",
+    "@types/jest": "^25.2.1",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
+    "babel-jest": "^25.2.6",
+    "cross-spawn": "^7.0.2",
+    "cross-spawn-promise": "^0.10.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.2.7",
     "lerna": "^3.20.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.0.2",
+    "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
   },
-  "name": "scripts"
+  "name": "scripts",
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "babel-jest"
+    }
+  }
 }

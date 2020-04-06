@@ -9,7 +9,7 @@
   ],
   "bin": {
     "cremalab-scripts": "node_modules/@cremalab/scripts/dist/bin/scripts.js",
-    "cremalab-scripts-web": "dist/scripts-web/src/bin/scripts.js"
+    "cremalab-scripts-web": "dist/bin/scripts.js"
   },
   "scripts": {
     "start": "npm run clean && npm run compile -- -w",
