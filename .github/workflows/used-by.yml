@@ -21,7 +21,7 @@ jobs:
           ref: develop
       - run:
           cd packages/scripts-web &&
-          npm link
+          npm link &&
           cd ../../app-web &&
           npm link @cremalab/scripts-web
       - run:
