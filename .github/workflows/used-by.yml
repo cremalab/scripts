@@ -20,10 +20,10 @@ jobs:
           path: app-web
           ref: develop
       - run:
-          cd packages/scripts-web &&
-          npm link &&
-          cd ../../app-web &&
-          npm link @cremalab/scripts-web
+          sudo cd packages/scripts-web &&
+          sudo npm link &&
+          sudo cd ../../app-web &&
+          sudo npm link @cremalab/scripts-web
       - run:
           cd app-web &&
           npm run test:ci
