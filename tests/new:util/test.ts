@@ -1,12 +1,15 @@
 import {
   deleteUtil,
   generateNewUtil,
-  navigateToProjectDirectory,
+  navigateToConsumer,
   printTreeOfNewUtil,
 } from "./utils"
 
 describe("new:util", () => {
-  beforeAll(navigateToProjectDirectory)
+  beforeAll(() => {
+    navigateToConsumer()
+    console.log("CWD", process.cwd())
+  })
   afterAll(deleteUtil)
 
   it("from correct directory", () =>

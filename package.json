@@ -11,7 +11,7 @@
     "start": "lerna run start --stream --parallel",
     "test:ci": "bash ./shell/ci.sh",
     "test:web:generators": "bash ./shell/web/testGenerators.sh",
-    "test:unit": "jest --detectOpenHandles -i",
+    "test:unit": "jest --detectOpenHandles",
     "test:unit:watch": "npm run test:unit -- --watch",
     "test:lint": "eslint -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'",
     "test:lint:fix": "npm run test:lint -- --fix",
