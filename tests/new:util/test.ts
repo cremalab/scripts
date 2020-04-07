@@ -2,6 +2,7 @@ import {
   deleteUtil,
   generateNewUtil,
   navigateToConsumer,
+  navigateToProject,
   printTreeOfNewUtil,
 } from "./utils"
 
@@ -10,7 +11,10 @@ describe("new:util", () => {
     navigateToConsumer()
     console.log("CWD", process.cwd())
   })
-  afterAll(deleteUtil)
+  afterAll(() => {
+    deleteUtil()
+    navigateToProject()
+  })
 
   it("from correct directory", () =>
     expect(process.cwd()).toContain("/app-web"))

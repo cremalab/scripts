@@ -2,7 +2,9 @@ import path from "path"
 import spawn from "cross-spawn"
 
 export const navigateToConsumer = () =>
-  process.chdir(path.join(__dirname, "../../consumers/app-web"))
+  process.chdir(path.resolve("consumers/app-web"))
+
+export const navigateToProject = () => process.chdir("../../")
 
 export const generateNewUtil = () => {
   return new Promise((resolve) => {
