@@ -19,11 +19,12 @@ jobs:
           repository: cremalab/app-web
           path: consumers/app-web
           ref: develop-scripts
-      - run: cd packages/scripts-web
-      - run: sudo npm link
-      - run: cd ../../consumers/app-web
-      - run: npm i
-      - run: sudo npm link @cremalab/scripts-web
-      - run: cd ../../
+      - run: 
+          cd packages/scripts-web &&
+          sudo npm link
+      - run: 
+          cd consumers/app-web &&
+          npm i &&
+          sudo npm link @cremalab/scripts-web
       - run: npm run bootstrap
       - run: npm run test:unit
