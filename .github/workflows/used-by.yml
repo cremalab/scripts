@@ -23,6 +23,7 @@ jobs:
           cd packages/scripts-web &&
           sudo npm link &&
           cd ../../app-web &&
+          npm i &&
           sudo npm link @cremalab/scripts-web
       - run:
           cd app-web &&
