@@ -2,19 +2,12 @@ import {
   deleteUtil,
   generateNewUtil,
   navigateToConsumer,
-  navigateToProject,
   printTreeOfNewUtil,
 } from "./utils"
 
 describe("new:util", () => {
-  beforeAll(() => {
-    navigateToConsumer()
-    console.log("CWD", process.cwd())
-  })
-  afterAll(() => {
-    deleteUtil()
-    navigateToProject()
-  })
+  beforeAll(navigateToConsumer)
+  afterAll(deleteUtil)
 
   it("from correct directory", () =>
     expect(process.cwd()).toContain("/app-web"))
@@ -23,7 +16,7 @@ describe("new:util", () => {
     await generateNewUtil()
     const tree = printTreeOfNewUtil()
     expect(tree).toMatchInlineSnapshot(`
-    "./src/utils/foo
+    "foo
     ├── README.md
     ├── index.ts
     └── test.ts

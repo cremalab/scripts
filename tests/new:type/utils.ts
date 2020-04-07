@@ -2,9 +2,7 @@ import path from "path"
 import spawn from "cross-spawn"
 
 export const navigateToConsumer = () =>
-  process.chdir(path.resolve("consumers/app-web"))
-
-export const navigateToProject = () => process.chdir("../../")
+  process.chdir(path.resolve(__dirname, "../../consumers/app-web"))
 
 export const generateNewUtil = () => {
   return new Promise((resolve) => {
@@ -17,7 +15,7 @@ export const generateNewUtil = () => {
 }
 
 export const printTreeOfNewUtil = () =>
-  spawn.sync("tree", ["--noreport", "./src/types"]).stdout.toString()
+  spawn.sync("tree", ["src/types"]).stdout.toString()
 
 export const deleteUtil = () =>
-  spawn.sync("rm", ["./src/types/Foo.ts"], { stdio: "inherit" })
+  spawn.sync("rm", ["src/types/Foo.ts"], { stdio: "inherit" })
