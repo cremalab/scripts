@@ -18,7 +18,7 @@ jobs:
         with:
           repository: cremalab/app-web
           path: app-web
-          ref: develop
+          ref: develop-scripts
       - run:
           cd packages/scripts-web &&
           sudo npm link &&
