@@ -2,8 +2,6 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/../utils.sh"
 
-
-
 print "1. Create link for @cremalab/scripts-web..."
 
 npm run build

@@ -12,6 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with: 
+          submodules: 'recursive'
       - run: npm ci
-      - run: npm run build
       - run: sudo npm run test:ci
