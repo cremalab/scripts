@@ -14,17 +14,4 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm ci
       - run: npm run build
-      - uses: actions/checkout@v2
-        with:
-          repository: cremalab/app-web
-          path: consumers/app-web
-          ref: develop-scripts
-      - run: 
-          cd packages/scripts-web &&
-          sudo npm link
-      - run: 
-          cd consumers/app-web &&
-          npm i &&
-          sudo npm link @cremalab/scripts-web
-      - run: npm run bootstrap
-      - run: npm run test:unit
+      - run: sudo npm run test:ci
