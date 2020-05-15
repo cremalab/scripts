@@ -1,10 +1,6 @@
-import path from "path"
 import spawn from "cross-spawn"
 
-export const navigateToConsumer = () =>
-  process.chdir(path.resolve(process.cwd(), "consumers/app-web"))
-
-export const generateNewUtil = () => {
+export const generateNewComponent = () => {
   return new Promise((resolve) => {
     const child = spawn("npm", ["run", "new:component"], {
       stdio: "pipe",
@@ -20,9 +16,3 @@ export const generateNewUtil = () => {
     child.on("close", resolve)
   })
 }
-
-export const printTreeOfNewUtil = () =>
-  spawn.sync("tree", ["src/components/Foo"]).stdout.toString()
-
-export const deleteUtil = () =>
-  spawn.sync("rm", ["-rf", "src/components/Foo"], { stdio: "inherit" })
