@@ -10,6 +10,7 @@
     "setup:submodules": "git submodule update --remote",
     "start": "lerna run start --stream --parallel",
     "test:ci": "bash ./shell/ci.sh",
+    "test:ci:mobile": "bash ./shell/ci.mobile.sh",
     "test:ci:web": "bash ./shell/ci.web.sh",
     "test:web:generators": "bash ./shell/web/testGenerators.sh",
     "test:unit": "jest --detectOpenHandles",

@@ -4,7 +4,7 @@ import { navigateToConsumer } from "../utils/navigateToConsumer"
 import { printTreeOfNew } from "../utils/printTreeOfNew"
 
 describe("new:component", () => {
-  beforeAll(navigateToConsumer("app-web"))
+  beforeAll(navigateToConsumer("app-mobile"))
   afterAll(cleanup)
 
   it("generates component with expected files", async () => {

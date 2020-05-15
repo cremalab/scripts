@@ -8,7 +8,7 @@ export const generateNewComponent = () => {
     child.stdin?.write("foo\n")
     child.stdout?.on("data", (data) => {
       const message: string = data.toString()
-      const messageUseState = message.includes("Does component use state?")
+      const messageUseState = message.includes("Did you want to generate")
       if (messageUseState) {
         child.stdin?.write("\n")
       }
