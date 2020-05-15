@@ -21,7 +21,7 @@
     "update:web": "git pull --recurse-submodules && cd ./consumers/app-web && npm i"
   },
   "devDependencies": {
-    "@types/cross-spawn": "6.0.1",
+    "@types/cross-spawn": "6.0.2",
     "@types/jest": "25.2.1",
     "@typescript-eslint/eslint-plugin": "2.26.0",
     "@typescript-eslint/parser": "2.26.0",

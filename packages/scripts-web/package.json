@@ -36,6 +36,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/cross-spawn": "6.0.1"
+    "@types/cross-spawn": "6.0.2"
   }
 }
