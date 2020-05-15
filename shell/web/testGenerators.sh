@@ -23,7 +23,7 @@ npx lerna bootstrap
 
 print "4. Run Unit Tests..."
 
-npx jest --detectOpenHandles -i
+npx jest --detectOpenHandles -i --testPathPattern=tests/app-web
 
 print "5. Teardown links..."
 

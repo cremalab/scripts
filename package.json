@@ -7,7 +7,7 @@
     "clean": "lerna clean",
     "publish": "lerna publish",
     "setup": "npm run build && npm run bootstrap && npm run link",
-    "setup:web": "git submodule update --init && cd ./consumers/app-web && npm i && npm i -D ../../packages/scripts-web",
+    "setup:submodules": "git submodule update --remote",
     "start": "lerna run start --stream --parallel",
     "test:ci": "bash ./shell/ci.sh",
     "test:web:generators": "bash ./shell/web/testGenerators.sh",

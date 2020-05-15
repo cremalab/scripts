@@ -2,3 +2,7 @@
 	path = consumers/app-web
 	url = git@github.com:cremalab/app-web.git
 	branch = develop-scripts
+[submodule "consumers/app-mobile"]
+	path = consumers/app-mobile
+	url = git@github.com:cremalab/app-mobile.git
+	branch = develop-scripts
