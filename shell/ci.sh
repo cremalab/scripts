@@ -1,20 +1,5 @@
 #!/bin/bash
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source "$DIR/utils.sh"
 
-print "Clone git submodules..."
-git submodule update --remote
-
-print "Install app-mobile dependencies..."
-cd ./consumers/app-mobile
-npm ci
-cd ../../
-
-bash "$DIR/mobile/testGenerators.sh"
-
-print "Install app-web dependencies..."
-cd ./consumers/app-web
-npm ci
-cd ../../
-
-bash "$DIR/web/testGenerators.sh"
+bash "$DIR/ci.mobile.sh"
+bash "$DIR/ci.web.sh"
