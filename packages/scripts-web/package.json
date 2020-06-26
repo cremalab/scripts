@@ -1,6 +1,6 @@
 {
   "name": "@cremalab/scripts-web",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Scripts for cremalab/app-web",
   "files": [
     "_templates",
@@ -21,7 +21,7 @@
     "pack": "npm pack"
   },
   "dependencies": {
-    "@cremalab/scripts": "^0.2.0",
+    "@cremalab/scripts": "^0.3.0",
     "cross-spawn": "7.0.3",
     "hygen": "5.0.3"
   },
