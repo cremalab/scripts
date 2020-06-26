@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@cremalab/scripts": "^0.2.0",
-    "cross-spawn": "7.0.2",
+    "cross-spawn": "7.0.3",
     "hygen": "5.0.3"
   },
   "author": "",
