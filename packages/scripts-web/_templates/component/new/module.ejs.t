@@ -1,38 +1,41 @@
 ---
 to: src/components/<%= name %>/index.tsx
 ---
-<% if(useState) { -%>
+<% if(!withExample) { -%>
+import React from "react"
+
+export function <%= name %>() {
+  return <></>
+}
+<% } else if(useState) { -%>
 import React, { useState } from "react"
 
-type Props = Readonly<{ name: string }>
+type Props = Readonly<{}>
 
-/**
- * <%= name %>
- * ------------------------------------------------
- * DESCRIPTION_HERE
- */
-
-export function <%= name %>({ name }: Props) {
+export function <%= name %>(_: Props) {
   const [count, setCount] = useState(0)
+
   return (
-    <div className="<%= name %>">
+    <div style={styles.container}>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>{name}</button>
+      <button onClick={() => setCount(count + 1)} title="<%= name %>" />
     </div>
   )
 }
 <% } else { -%>
 import React from "react"
 
-type Props = Readonly<{ name: string }>
+type Props = Readonly<{}>
 
-/**
- * <%= name %>
- * ------------------------------------------------
- * DESCRIPTION_HERE
- */
-
-export function <%= name %>({ name }: Props) {
-  return <div className="<%= name %>">{name}</div>
+export function <%= name %>(_: Props) {
+  return (
+    <div>
+      <p><%= name %></p>
+    </div>
+  )
 }
+
+const styles = StyleSheet.create({
+  container: {},
+})
 <% } -%>
