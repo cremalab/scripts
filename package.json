@@ -6,19 +6,17 @@
     "link": "lerna link",
     "clean": "lerna clean",
     "publish": "lerna publish",
-    "setup": "npm run build && npm run bootstrap && npm run link",
-    "setup:web": "git submodule update --init && cd ./consumers/app-web && npm i && npm i -D ../../packages/scripts-web",
+    "setup:mobile": "bash ./shell/mobile/setup.sh",
     "start": "lerna run start --stream --parallel",
     "test:ci": "bash ./shell/ci.sh",
+    "test:ci:mobile": "bash ./shell/ci.mobile.sh",
+    "test:ci:web": "bash ./shell/ci.web.sh",
     "test:web:generators": "bash ./shell/web/testGenerators.sh",
     "test:unit": "jest --detectOpenHandles",
     "test:unit:watch": "npm run test:unit -- --watch",
     "test:lint": "eslint -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'",
     "test:lint:fix": "npm run test:lint -- --fix",
-    "test:pack": "lerna run test:pack --stream",
-    "test:web:setup": "npm run setup && cd packages/scripts-web && npm link && cd ../../consumers/app-web && npm link @cremalab/scripts-web",
-    "test:web:teardown": "cd consumers/app-web && npm unlink --no-save @cremalab/scripts-web && cd ../../packages/scripts-web && npm unlink",
-    "update:web": "git pull --recurse-submodules && cd ./consumers/app-web && npm i"
+    "test:pack": "lerna run test:pack --stream"
   },
   "devDependencies": {
     "@types/cross-spawn": "6.0.2",
