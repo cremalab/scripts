@@ -5,4 +5,4 @@
 [submodule "consumers/app-mobile"]
 	path = consumers/app-mobile
 	url = git@github.com:cremalab/app-mobile.git
-	branch = develop-scripts
+	branch = develop
