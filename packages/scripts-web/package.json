@@ -23,7 +23,7 @@
   "dependencies": {
     "@cremalab/scripts": "^0.4.0",
     "cross-spawn": "7.0.3",
-    "hygen": "5.0.3"
+    "hygen": "6.0.4"
   },
   "author": "",
   "license": "ISC",
