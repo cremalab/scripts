@@ -2,6 +2,6 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/../utils.sh"
 
-print "TESTING: Web"
+print "CLONING: git submodules"
 
-npx jest --detectOpenHandles -i --testPathPattern=tests/app-web
+git submodule update --remote
