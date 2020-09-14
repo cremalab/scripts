@@ -7,7 +7,7 @@ describe("TypeScript", () => {
   afterAll(cleanup)
 
   it("compiles", async () => {
-    const signal = await validateTypeScript()
-    expect(signal).toEqual(0)
+    const result = await validateTypeScript()
+    expect(result).toEqual("")
   })
 })
