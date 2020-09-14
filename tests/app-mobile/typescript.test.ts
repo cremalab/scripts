@@ -1,13 +1,11 @@
-import { cleanup } from "../utils/cleanup"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
 import { validateTypeScript } from "../utils/validateTypeScript"
 
 describe("TypeScript", () => {
   beforeAll(navigateToConsumer("app-mobile"))
-  afterAll(cleanup)
 
   it("compiles", async () => {
-    const signal = await validateTypeScript()
-    expect(signal).toEqual(0)
+    const result = await validateTypeScript()
+    expect(result).toEqual("")
   })
 })
