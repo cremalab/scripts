@@ -1,6 +1,6 @@
 {
   "name": "@cremalab/scripts-web",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Scripts for cremalab/app-web",
   "files": [
     "_templates",
@@ -21,7 +21,7 @@
     "pack": "npm pack"
   },
   "dependencies": {
-    "@cremalab/scripts": "^0.4.0"
+    "@cremalab/scripts": "^0.5.0"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +32,5 @@
   "gitHead": "88cd781a5facaa0e7ce3f208b5a021af5bd3d353",
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {}
+  }
 }
