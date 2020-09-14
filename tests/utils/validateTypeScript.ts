@@ -5,6 +5,19 @@ export const validateTypeScript = () => {
     const child = spawn("npm", ["run", "test:types"], {
       stdio: "pipe",
     })
-    child.on("close", resolve)
+
+    let msg = ""
+
+    child.stdout?.on("data", (error) => {
+      msg += String(error)
+    })
+
+    child.on("close", (signal) => {
+      if (signal === 1) {
+        resolve(msg)
+      } else {
+        resolve("")
+      }
+    })
   })
 }
