@@ -21,9 +21,7 @@
     "pack": "npm pack"
   },
   "dependencies": {
-    "@cremalab/scripts": "^0.4.0",
-    "cross-spawn": "7.0.3",
-    "hygen": "6.0.4"
+    "@cremalab/scripts": "^0.4.0"
   },
   "author": "",
   "license": "ISC",
@@ -35,7 +33,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "devDependencies": {
-    "@types/cross-spawn": "6.0.2"
-  }
+  "devDependencies": {}
 }
