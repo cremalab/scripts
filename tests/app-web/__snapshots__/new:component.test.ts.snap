@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`new:component with example and with state generates component with expected files 1`] = `
+"Foo
+├── README.md
+├── index.tsx
+├── stories.tsx
+└── test.tsx
+"
+`;
+
+exports[`new:component with example and with state generates directory with expected \`README.md\` contents 1`] = `
+"# \`<Foo />\`
+
+DESCRIPTION_HERE
+
+## Directory Structure
+
+- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
+- \`test.tsx\`: Component tests (\`npm run test:unit\`)
+- \`index.tsx\`: Component code
+- \`README.md\`: Component documentation (hey, that's me!)
+
+## Example
+
+![Foo](../../../.loki/reference/chrome_Foo_example.png)
+
+> Image location: [\`.loki/reference/chrome_Foo_example.png\`](../../../.loki/reference/chrome_Foo_example.png)
+> 
+> To regenerate: 
+> 1. \`npm run test:playground\` (skip if running)
+> 1. \`npm run test:visual:update -- --storiesFilter=\\"^Foo example\\\\$\\"\`
+"
+`;
+
+exports[`new:component with example and with state generates directory with expected \`index.tsx\` contents 1`] = `
+"import React, { useState } from \\"react\\"
+
+type Props = Readonly<{}>
+
+export function Foo(_: Props) {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)} title=\\"Foo\\" />
+    </div>
+  )
+}
+"
+`;
+
+exports[`new:component with example and with state generates directory with expected \`stories.tsx\` contents 1`] = `
+"import React from \\"react\\"
+import decoratorCentered from \\"@storybook/addon-centered\\"
+import { Foo } from \\".\\"
+
+/**
+ * See Storybook Docs: Writing Stories
+ * https://storybook.js.org/docs/basics/writing-stories/
+ */
+
+export default {
+  title: \\"Foo\\",
+  decorators: [decoratorCentered],
+}
+
+export const example = () => <Foo />
+"
+`;
+
+exports[`new:component with example and with state generates directory with expected \`test.tsx\` contents 1`] = `
+"import { Foo } from \\".\\"
+import { render, fireEvent } from \\"@testing-library/react\\"
+import React from \\"react\\"
+
+describe(\\"Foo\\", () => {
+  it(\\"has correct message before clicking\\", () => {
+    // Arrange
+    const message = \\"You clicked 0 times\\"
+
+    // Act
+    const { getByText } = render(<Foo />)
+    const received = getByText(message)
+
+    // Assert
+    expect(received).toBeDefined()
+  })
+
+  it(\\"has correct message after clicking\\", () => {
+    // Arrange
+    const name = \\"Click Me\\"
+    const message = \\"You clicked 1 times\\"
+
+    // Act
+    const { getByText } = render(<Foo />)
+    const button = getByText(name)
+    fireEvent.click(button)
+    const received = getByText(message)
+
+    // Assert
+    expect(received).toBeDefined()
+  })
+})
+"
+`;
+
+exports[`new:component with example but without state generates component with expected files 1`] = `
+"Foo
+├── README.md
+├── index.tsx
+├── stories.tsx
+└── test.tsx
+"
+`;
+
+exports[`new:component with example but without state generates directory with expected \`README.md\` contents 1`] = `
+"# \`<Foo />\`
+
+DESCRIPTION_HERE
+
+## Directory Structure
+
+- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
+- \`test.tsx\`: Component tests (\`npm run test:unit\`)
+- \`index.tsx\`: Component code
+- \`README.md\`: Component documentation (hey, that's me!)
+
+## Example
+
+![Foo](../../../.loki/reference/chrome_Foo_example.png)
+
+> Image location: [\`.loki/reference/chrome_Foo_example.png\`](../../../.loki/reference/chrome_Foo_example.png)
+> 
+> To regenerate: 
+> 1. \`npm run test:playground\` (skip if running)
+> 1. \`npm run test:visual:update -- --storiesFilter=\\"^Foo example\\\\$\\"\`
+"
+`;
+
+exports[`new:component with example but without state generates directory with expected \`index.tsx\` contents 1`] = `
+"import React from \\"react\\"
+
+type Props = Readonly<{}>
+
+export function Foo(_: Props) {
+  return (
+    <div>
+      <p>Foo</p>
+    </div>
+  )
+}
+"
+`;
+
+exports[`new:component with example but without state generates directory with expected \`stories.tsx\` contents 1`] = `
+"import React from \\"react\\"
+import decoratorCentered from \\"@storybook/addon-centered\\"
+import { Foo } from \\".\\"
+
+/**
+ * See Storybook Docs: Writing Stories
+ * https://storybook.js.org/docs/basics/writing-stories/
+ */
+
+export default {
+  title: \\"Foo\\",
+  decorators: [decoratorCentered],
+}
+
+export const example = () => <Foo />
+"
+`;
+
+exports[`new:component with example but without state generates directory with expected \`test.tsx\` contents 1`] = `
+"import { Foo } from \\".\\"
+import { render } from \\"@testing-library/react\\"
+import React from \\"react\\"
+
+describe(\\"Foo\\", () => {
+  it(\\"name prop is rendered\\", () => {
+    // Arrange
+    const name = \\"Foo\\"
+
+    // Act
+    const { getByText } = render(<Foo />)
+    const received = getByText(name)
+
+    // Assert
+    expect(received).toBeDefined()
+  })
+})
+"
+`;
+
+exports[`new:component without example code generates directory with expected \`README.md\` contents 1`] = `
+"# \`<Foo />\`
+
+DESCRIPTION_HERE
+
+## Directory Structure
+
+- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
+- \`test.tsx\`: Component tests (\`npm run test:unit\`)
+- \`index.tsx\`: Component code
+- \`README.md\`: Component documentation (hey, that's me!)
+
+## Example
+
+![Foo](../../../.loki/reference/chrome_Foo_example.png)
+
+> Image location: [\`.loki/reference/chrome_Foo_example.png\`](../../../.loki/reference/chrome_Foo_example.png)
+> 
+> To regenerate: 
+> 1. \`npm run test:playground\` (skip if running)
+> 1. \`npm run test:visual:update -- --storiesFilter=\\"^Foo example\\\\$\\"\`
+"
+`;
+
+exports[`new:component without example code generates directory with expected \`index.tsx\` contents 1`] = `
+"import React from \\"react\\"
+
+export function Foo() {
+  return <></>
+}
+"
+`;
+
+exports[`new:component without example code generates directory with expected \`stories.tsx\` contents 1`] = `
+"import React from \\"react\\"
+import decoratorCentered from \\"@storybook/addon-centered\\"
+import { Foo } from \\".\\"
+
+/**
+ * See Storybook Docs: Writing Stories
+ * https://storybook.js.org/docs/basics/writing-stories/
+ */
+
+export default {
+  title: \\"Foo\\",
+  decorators: [decoratorCentered],
+}
+
+export const example = () => <Foo />
+"
+`;
+
+exports[`new:component without example code generates directory with expected \`test.tsx\` contents 1`] = `
+"import { Foo } from \\".\\"
+import React from \\"react\\"
+
+describe(\\"Foo\\", () => {
+  it.todo(\`Foo needs to be tested\`)
+})
+"
+`;
+
+exports[`new:component without example code generates directory with expected files 1`] = `
+"Foo
+├── README.md
+├── index.tsx
+├── stories.tsx
+└── test.tsx
+"
+`;

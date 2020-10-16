@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`new:component with example and with state generates component with expected files 1`] = `
+"Foo
+├── README.md
+├── index.tsx
+├── stories.tsx
+└── test.tsx
+"
+`;
+
+exports[`new:component with example and with state generates directory with expected \`README.md\` contents 1`] = `
+"# \`<Foo />\`
+
+DESCRIPTION_HERE
+
+## Directory Structure
+
+- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
+- \`test.tsx\`: Component tests (\`npm run test:unit\`)
+- \`index.tsx\`: Component code
+- \`README.md\`: Component documentation (hey, that's me!)
+
+## Example
+
+![Foo](../../../.loki/reference/chrome_Foo_example.png)
+
+> Image location: [\`.loki/reference/chrome_Foo_example.png\`](../../../.loki/reference/chrome_Foo_example.png)
+> 
+> To regenerate: 
+> 1. \`npm run test:playground\` (skip if running)
+> 1. \`npm run test:visual:update -- --storiesFilter=\\"^Foo example\\\\$\\"\`
+"
+`;
+
+exports[`new:component with example and with state generates directory with expected \`index.tsx\` contents 1`] = `
+"import React, { useState } from \\"react\\"
+import { Button, StyleSheet, Text, View } from \\"react-native\\"
+
+type Props = Readonly<{}>
+
+export function Foo(_: Props) {
+  const [count, setCount] = useState(0)
+  return (
+    <View style={styles.container}>
+      <Text>You clicked {count} times</Text>
+      <Button onPress={() => setCount(count + 1)} title=\\"Foo\\" />
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {},
+})
+"
+`;
+
+exports[`new:component with example and with state generates directory with expected \`stories.tsx\` contents 1`] = `
+"import { storiesOf } from \\"@storybook/react-native\\"
+import React from \\"react\\"
+import { Foo } from \\".\\"
+
+storiesOf(\\"Foo\\", module).add(\\"example\\", () => <Foo />)
+"
+`;
+
+exports[`new:component with example and with state generates directory with expected \`test.tsx\` contents 1`] = `
+"import { Foo } from \\".\\"
+import { render, fireEvent } from \\"@testing-library/react-native\\"
+import React from \\"react\\"
+
+describe(\\"Foo\\", () => {
+  it(\\"has correct message before clicking\\", () => {
+    // Arrange
+    const message = \\"You clicked 0 times\\"
+
+    // Act
+    const { getByText } = render(<Foo />)
+    const received = getByText(message)
+
+    // Assert
+    expect(received).toBeDefined()
+  })
+
+  it(\\"has correct message after clicking\\", () => {
+    // Arrange
+    const name = \\"Click Me\\"
+    const message = \\"You clicked 1 times\\"
+
+    // Act
+    const { getByText } = render(<Foo />)
+    const button = getByText(name)
+    fireEvent.press(button)
+    const received = getByText(message)
+
+    // Assert
+    expect(received).toBeDefined()
+  })
+})
+"
+`;
+
+exports[`new:component with example but without state generates component with expected files 1`] = `
+"Foo
+├── README.md
+├── index.tsx
+├── stories.tsx
+└── test.tsx
+"
+`;
+
+exports[`new:component with example but without state generates directory with expected \`README.md\` contents 1`] = `
+"# \`<Foo />\`
+
+DESCRIPTION_HERE
+
+## Directory Structure
+
+- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
+- \`test.tsx\`: Component tests (\`npm run test:unit\`)
+- \`index.tsx\`: Component code
+- \`README.md\`: Component documentation (hey, that's me!)
+
+## Example
+
+![Foo](../../../.loki/reference/chrome_Foo_example.png)
+
+> Image location: [\`.loki/reference/chrome_Foo_example.png\`](../../../.loki/reference/chrome_Foo_example.png)
+> 
+> To regenerate: 
+> 1. \`npm run test:playground\` (skip if running)
+> 1. \`npm run test:visual:update -- --storiesFilter=\\"^Foo example\\\\$\\"\`
+"
+`;
+
+exports[`new:component with example but without state generates directory with expected \`index.tsx\` contents 1`] = `
+"import React from \\"react\\"
+import { StyleSheet, Text, View } from \\"react-native\\"
+
+type Props = Readonly<{}>
+
+export function Foo(_: Props) {
+  return (
+    <View style={styles.container}>
+      <Text>Foo</Text>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {},
+})
+"
+`;
+
+exports[`new:component with example but without state generates directory with expected \`stories.tsx\` contents 1`] = `
+"import { storiesOf } from \\"@storybook/react-native\\"
+import React from \\"react\\"
+import { Foo } from \\".\\"
+
+storiesOf(\\"Foo\\", module).add(\\"example\\", () => <Foo />)
+"
+`;
+
+exports[`new:component with example but without state generates directory with expected \`test.tsx\` contents 1`] = `
+"import { Foo } from \\".\\"
+import { render } from \\"@testing-library/react-native\\"
+import React from \\"react\\"
+
+describe(\\"Foo\\", () => {
+  it(\\"name prop is rendered\\", () => {
+    // Arrange
+    const name = \\"Foo\\"
+
+    // Act
+    const { getByText } = render(<Foo />)
+    const received = getByText(name)
+
+    // Assert
+    expect(received).toBeDefined()
+  })
+})
+"
+`;
+
+exports[`new:component without example code generates directory with expected \`README.md\` contents 1`] = `
+"# \`<Foo />\`
+
+DESCRIPTION_HERE
+
+## Directory Structure
+
+- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
+- \`test.tsx\`: Component tests (\`npm run test:unit\`)
+- \`index.tsx\`: Component code
+- \`README.md\`: Component documentation (hey, that's me!)
+
+## Example
+
+![Foo](../../../.loki/reference/chrome_Foo_example.png)
+
+> Image location: [\`.loki/reference/chrome_Foo_example.png\`](../../../.loki/reference/chrome_Foo_example.png)
+> 
+> To regenerate: 
+> 1. \`npm run test:playground\` (skip if running)
+> 1. \`npm run test:visual:update -- --storiesFilter=\\"^Foo example\\\\$\\"\`
+"
+`;
+
+exports[`new:component without example code generates directory with expected \`index.tsx\` contents 1`] = `
+"import React from \\"react\\"
+
+export function Foo() {
+  return <></>
+}
+"
+`;
+
+exports[`new:component without example code generates directory with expected \`stories.tsx\` contents 1`] = `
+"import { storiesOf } from \\"@storybook/react-native\\"
+import React from \\"react\\"
+import { Foo } from \\".\\"
+
+storiesOf(\\"Foo\\", module).add(\\"example\\", () => <Foo />)
+"
+`;
+
+exports[`new:component without example code generates directory with expected \`test.tsx\` contents 1`] = `
+"import { Foo } from \\".\\"
+import React from \\"react\\"
+
+describe(\\"Foo\\", () => {
+  it.todo(\`Foo needs to be tested\`)
+})
+"
+`;
+
+exports[`new:component without example code generates directory with expected files 1`] = `
+"Foo
+├── README.md
+├── index.tsx
+├── stories.tsx
+└── test.tsx
+"
+`;

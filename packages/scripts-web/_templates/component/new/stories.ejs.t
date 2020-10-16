@@ -15,4 +15,4 @@ export default {
   decorators: [decoratorCentered],
 }
 
-export const example = () => <<%= name %> name="<%= name %>" />
+export const example = () => <<%= name %> />
