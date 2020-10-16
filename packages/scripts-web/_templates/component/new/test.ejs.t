@@ -10,7 +10,7 @@ describe("<%= name %>", () => {
 })
 <% } else if(useState) { -%>
 import { <%= name %> } from "."
-import { render, fireEvent } from "@testing-library/react-native"
+import { render, fireEvent } from "@testing-library/react"
 import React from "react"
 
 describe("<%= name %>", () => {
@@ -34,7 +34,7 @@ describe("<%= name %>", () => {
     // Act
     const { getByText } = render(<<%= name %> />)
     const button = getByText(name)
-    fireEvent.press(button)
+    fireEvent.click(button)
     const received = getByText(message)
 
     // Assert
@@ -43,7 +43,7 @@ describe("<%= name %>", () => {
 })
 <% } else { -%>
 import { <%= name %> } from "."
-import { render } from "@testing-library/react-native"
+import { render } from "@testing-library/react"
 import React from "react"
 
 describe("<%= name %>", () => {

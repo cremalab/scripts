@@ -16,7 +16,7 @@ export function <%= name %>(_: Props) {
   const [count, setCount] = useState(0)
 
   return (
-    <div style={styles.container}>
+    <div>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)} title="<%= name %>" />
     </div>
@@ -34,8 +34,4 @@ export function <%= name %>(_: Props) {
     </div>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {},
-})
 <% } -%>
