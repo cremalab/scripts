@@ -7,3 +7,9 @@ print "UNLINK: app-mobile from @cremalab/scripts-mobile"
 cd consumers/app-mobile
 npm unlink --no-save @cremalab/scripts-mobile
 cd ../../
+
+print "UNLINK: Remove global link for @cremalab/scripts-mobile"
+
+cd packages/scripts-mobile
+npm unlink
+cd ../../

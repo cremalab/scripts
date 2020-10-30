@@ -18,7 +18,7 @@ export function <%= name %>(_: Props) {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)} title="<%= name %>" />
+      <button onClick={() => setCount(count + 1)}>Click Me</button>
     </div>
   )
 }

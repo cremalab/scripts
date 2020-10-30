@@ -44,7 +44,7 @@ export function Foo(_: Props) {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)} title=\\"Foo\\" />
+      <button onClick={() => setCount(count + 1)}>Click Me</button>
     </div>
   )
 }
@@ -90,12 +90,12 @@ describe(\\"Foo\\", () => {
 
   it(\\"has correct message after clicking\\", () => {
     // Arrange
-    const name = \\"Click Me\\"
+    const buttonText = \\"Click Me\\"
     const message = \\"You clicked 1 times\\"
 
     // Act
     const { getByText } = render(<Foo />)
-    const button = getByText(name)
+    const button = getByText(buttonText)
     fireEvent.click(button)
     const received = getByText(message)
 

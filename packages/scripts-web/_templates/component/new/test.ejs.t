@@ -28,12 +28,12 @@ describe("<%= name %>", () => {
 
   it("has correct message after clicking", () => {
     // Arrange
-    const name = "Click Me"
+    const buttonText = "Click Me"
     const message = "You clicked 1 times"
 
     // Act
     const { getByText } = render(<<%= name %> />)
-    const button = getByText(name)
+    const button = getByText(buttonText)
     fireEvent.click(button)
     const received = getByText(message)
 

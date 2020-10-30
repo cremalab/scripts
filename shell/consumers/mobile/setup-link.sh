@@ -5,7 +5,6 @@ source "$DIR/../../utils.sh"
 print "LINKING: Create link for @cremalab/scripts-mobile"
 
 cd packages/scripts-mobile
-npm unlink # Just in case
 npm link
 cd ../../
 

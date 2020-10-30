@@ -2,8 +2,8 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/../utils.sh"
 
-print "LINKING: Create link for @cremalab/scripts"
+print "UNLINKING: Remove global link for @cremalab/scripts"
 
 cd packages/scripts
-npm link --force
+npm unlink
 cd ../../
