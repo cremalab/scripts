@@ -34,9 +34,25 @@ Packages containing config, scripts, and dependencies for Crema apps.
 
 Run the following scripts with `npm run <SCRIPT_HERE>`:
 
-**TBD**
-
 >These scripts are located in `package.json` and do not represent the entirety of available scripts, but are the most commonly used.
+
+### ⚙️ Development
+
+1. `dev:setup` - !!!RUN FIRST: Packages must be built and symlinked first
+2. `dev:build` - builds packages once
+3. `dev:build:watch` - builds packages in watch mode
+4. `dev:test` - run unit tests (be sure you've run `dev:setup` first)
+5. `dev:test:watch` - run unit tests in watch mode (be sure you've run `dev:setup` first)
+6. `dev:teardown` - Removes all consumer and global symlinks
+
+### 📦 Publish
+
+1. `dev:setup` - !!!RUN FIRST: Packages must be built and symlinked first
+2. `dev:build` - builds packages once
+3. `dev:build:watch` - builds packages in watch mode
+4. `dev:test` - run unit tests (be sure you've run `dev:setup` first)
+5. `dev:test:watch` - run unit tests in watch mode (be sure you've run `dev:setup` first)
+6. `dev:teardown` - Removes all consumer and global symlinks
 
 ## 🏛 Structure
 
@@ -59,7 +75,3 @@ Run the following scripts with `npm run <SCRIPT_HERE>`:
         ├── configs
         └── package.json
 ```
-
-## 📦 Distribution
-
-**TBD**
