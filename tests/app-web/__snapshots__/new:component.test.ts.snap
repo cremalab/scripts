@@ -34,7 +34,7 @@ DESCRIPTION_HERE
 `;
 
 exports[`new:component with example and with state generates directory with expected \`index.tsx\` contents 1`] = `
-"import React, { useState } from \\"react\\"
+"import { useState } from \\"react\\"
 
 type Props = Readonly<{}>
 
@@ -140,9 +140,7 @@ DESCRIPTION_HERE
 `;
 
 exports[`new:component with example but without state generates directory with expected \`index.tsx\` contents 1`] = `
-"import React from \\"react\\"
-
-type Props = Readonly<{}>
+"type Props = Readonly<{}>
 
 export function Foo(_: Props) {
   return (
@@ -219,9 +217,7 @@ DESCRIPTION_HERE
 `;
 
 exports[`new:component without example code generates directory with expected \`index.tsx\` contents 1`] = `
-"import React from \\"react\\"
-
-export function Foo() {
+"export function Foo() {
   return <></>
 }
 "

@@ -2,13 +2,11 @@
 to: src/components/<%= name %>/index.tsx
 ---
 <% if(!withExample) { -%>
-import React from "react"
-
 export function <%= name %>() {
   return <></>
 }
 <% } else if(useState) { -%>
-import React, { useState } from "react"
+import { useState } from "react"
 
 type Props = Readonly<{}>
 
@@ -23,8 +21,6 @@ export function <%= name %>(_: Props) {
   )
 }
 <% } else { -%>
-import React from "react"
-
 type Props = Readonly<{}>
 
 export function <%= name %>(_: Props) {
