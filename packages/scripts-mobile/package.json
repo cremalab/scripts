@@ -1,6 +1,6 @@
 {
   "name": "@cremalab/scripts-mobile",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "",
   "main": "dist/index",
   "types": "dist/index",
@@ -23,7 +23,7 @@
     "pack": "npm pack"
   },
   "dependencies": {
-    "@cremalab/scripts": "^0.5.0"
+    "@cremalab/scripts": "^0.6.0"
   },
   "author": "",
   "license": "ISC",

@@ -1,6 +1,6 @@
 {
   "name": "@cremalab/scripts-web",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Scripts for cremalab/app-web",
   "files": [
     "_templates",
@@ -21,7 +21,7 @@
     "pack": "npm pack"
   },
   "dependencies": {
-    "@cremalab/scripts": "^0.5.0"
+    "@cremalab/scripts": "^0.6.0"
   },
   "author": "",
   "license": "ISC",
