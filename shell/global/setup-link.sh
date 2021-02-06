@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source "$DIR/utils.sh"
+source "$DIR/../utils.sh"
 
 print "LINKING: Create @cremalab/scripts-mobile global symlink"
 
