@@ -1,7 +1,7 @@
 {
   "name": "@cremalab/scripts-mobile",
   "version": "0.6.0",
-  "description": "",
+  "description": "Scripts for cremalab/app-mobile",
   "main": "dist/index",
   "types": "dist/index",
   "files": [
@@ -27,6 +27,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "directory": "packages/scripts-mobile",
+    "url": "https://github.com/cremalab/scripts"
+  },
   "gitHead": "88cd781a5facaa0e7ce3f208b5a021af5bd3d353",
   "publishConfig": {
     "access": "public"

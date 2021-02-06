@@ -1,8 +1,6 @@
 module.exports = {
-  roots: ["<rootDir>/tests"],
+  roots: ["<rootDir>/tests", "<rootDir>/packages"],
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
-  // modulePathIgnorePatterns: [],
-  // testPathIgnorePatterns: ["node_modules"],
 }

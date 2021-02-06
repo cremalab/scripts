@@ -2,8 +2,18 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/../utils.sh"
 
-print "UNLINKING: Remove global link for @cremalab/scripts"
+# MOBILE ----------------------------------------------------------
 
-cd packages/scripts
-npm unlink
+print "UNLINK: Remove @cremalab/scripts-mobile global symlink"
+
+cd ./packages/scripts-mobile
+npm unlink --force
+cd ../../
+
+# WEB -------------------------------------------------------------
+
+print "UNLINK: Remove @cremalab/scripts-web global symlink"
+
+cd ./packages/scripts-web
+npm unlink --force
 cd ../../

@@ -38,21 +38,34 @@ Run the following scripts with `npm run <SCRIPT_HERE>`:
 
 ### ⚙️ Development
 
-1. `dev:setup` - !!!RUN FIRST: Packages must be built and symlinked first
-2. `dev:build` - builds packages once
-3. `dev:build:watch` - builds packages in watch mode
-4. `dev:test` - run unit tests (be sure you've run `dev:setup` first)
-5. `dev:test:watch` - run unit tests in watch mode (be sure you've run `dev:setup` first)
-6. `dev:teardown` - Removes all consumer and global symlinks
+#### Terms to know...
+
+- "packages" — `./packages/(scripts|scripts-mobile|scripts-web)`
+  - These must be symlinked with `lerna link` because they depend on one another.
+- "consumers" - `./consumers/(app-mobile|app-web)`
+  - These are separate repositories that depend on this package and are included as git submodules that need to be cloned via `git submodule update --remote`. (Included for testing purposes)
+
+
+#### Steps to Complete
+
+1. Create global symlinks for `scripts-mobile` and `scripts-web`.
+2. Link "packages" (doing this after step 1 is necessary)
+3. Clone "consumers" (app-mobile/app-web)
+4. Install "consumers" dependencies
+5. Link "consumers" to global symlinks for `scripts-mobile` and `scripts-web`
+
+#### Scripts
+
+4. `dev:setup` - !!!RUN FIRST: Packages must be built and symlinked first
+5. `dev:build` - builds packages once (only TS will be built, templates are static)
+6. `dev:build:watch` - builds packages in watch mode
+7. `dev:test` - run unit tests (be sure you've run `dev:setup` first)
+8. `dev:test:watch` - run unit tests in watch mode (be sure you've run `dev:setup` first)
+9. `dev:teardown` - Removes all consumer and global symlinks (not typically necessary)
 
 ### 📦 Publish
 
-1. `dev:setup` - !!!RUN FIRST: Packages must be built and symlinked first
-2. `dev:build` - builds packages once
-3. `dev:build:watch` - builds packages in watch mode
-4. `dev:test` - run unit tests (be sure you've run `dev:setup` first)
-5. `dev:test:watch` - run unit tests in watch mode (be sure you've run `dev:setup` first)
-6. `dev:teardown` - Removes all consumer and global symlinks
+[COMING SOON]
 
 ## 🏛 Structure
 
