@@ -17,4 +17,4 @@ cd ../../
 print "LINKING: Link packages together"
 print "!!! This is very important"
 
-npm run link
+sudo npm run link
