@@ -33,6 +33,7 @@ jobs:
           npm --version
           git --version
 
+      - run: npm ls -g --depth=0 --link=true
       - run: npm ci
       - run: sudo npm run ci:web
 
