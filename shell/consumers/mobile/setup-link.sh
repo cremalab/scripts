@@ -4,6 +4,6 @@ source "$DIR/../../utils.sh"
 
 print "LINKING: Link consumers/app-mobile to global symlink @cremalab/scripts-mobile"
 
-cd consumers/app-mobile
+cd ./consumers/app-mobile
 npm link @cremalab/scripts-mobile
 cd ../../

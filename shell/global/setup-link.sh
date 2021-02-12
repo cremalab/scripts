@@ -4,13 +4,15 @@ source "$DIR/../utils.sh"
 
 print "LINKING: Create @cremalab/scripts-mobile global symlink"
 
-cd packages/scripts-mobile
+cd ./packages/scripts-mobile
+npm unlink @cremalab/scripts-mobile --force
 npm link --force
 cd ../../
 
 print "LINKING: Create @cremalab/scripts-web global symlink"
 
-cd packages/scripts-web
+cd ./packages/scripts-web
+npm unlink @cremalab/scripts-web --force
 npm link --force
 cd ../../
 

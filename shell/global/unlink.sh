@@ -7,7 +7,7 @@ source "$DIR/../utils.sh"
 print "UNLINK: Remove @cremalab/scripts-mobile global symlink"
 
 cd ./packages/scripts-mobile
-npm unlink --force
+npm unlink @cremalab/scripts-mobile --force
 cd ../../
 
 # WEB -------------------------------------------------------------
@@ -15,5 +15,5 @@ cd ../../
 print "UNLINK: Remove @cremalab/scripts-web global symlink"
 
 cd ./packages/scripts-web
-npm unlink --force
+npm unlink @cremalab/scripts-web --force
 cd ../../
