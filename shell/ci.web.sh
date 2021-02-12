@@ -8,5 +8,6 @@ bash "$DIR/global/setup-build.sh"
 bash "$DIR/global/setup-link.sh"
 
 # WEB
+bash "$DIR/consumers/web/setup-install.sh"
 bash "$DIR/consumers/web/setup-link.sh"
 bash "$DIR/consumers/web/test.sh"
