@@ -24,6 +24,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
+      
+      - run: npm i -g npm
+
+      - name: Dump version
+        run: |
+          node -v
+          npm --version
+          git --version
 
       - run: npm ci
       - run: sudo npm run ci:web
@@ -49,5 +57,13 @@ jobs:
         with:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
       
+      - run: npm i -g npm
+
+      - name: Dump version
+        run: |
+          node -v
+          npm --version
+          git --version
+
       - run: npm ci
       - run: sudo npm run ci:mobile
