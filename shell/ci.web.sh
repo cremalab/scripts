@@ -6,7 +6,6 @@ source "$DIR/utils.sh"
 bash "$DIR/global/setup-bootstrap.sh"
 bash "$DIR/global/setup-build.sh"
 bash "$DIR/global/setup-link.sh"
-bash "$DIR/global/setup-submodules.sh"
 
 # WEB
 bash "$DIR/consumers/web/setup-install.sh"
