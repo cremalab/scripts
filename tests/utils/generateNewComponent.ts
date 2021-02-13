@@ -6,7 +6,6 @@ type Opts = {
 }
 
 export const generateNewComponent = ({ withExample, withState }: Opts) => {
-  spawn("npm", ["ls", "-g", "--depth=0", "--link=true"])
   return new Promise((resolve) => {
     const child = spawn("npm", ["run", "new:component"], {
       stdio: "pipe",
