@@ -3,6 +3,5 @@ module.exports = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
-  // modulePathIgnorePatterns: [],
-  // testPathIgnorePatterns: ["node_modules"],
+  testTimeout: 10000,
 }
