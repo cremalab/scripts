@@ -9,12 +9,12 @@ jobs:
     env:
       CI: true
       SKIP_PREFLIGHT_CHECK: true 
-
     steps:
       - uses: actions/checkout@v2
         with: 
           submodules: 'recursive'
       - run: npm ci
+      - run: sudo bash shell/package-links-create.sh
       - run: sudo npm run ci:web
   app-mobile:
     name: cremalab/app-mobile
@@ -22,7 +22,6 @@ jobs:
     env:
       CI: true
       SKIP_PREFLIGHT_CHECK: true 
-
     steps:
       - uses: actions/checkout@v2
         with: 
