@@ -22,3 +22,11 @@ cd ../../
 
 print "Global links..."
 npm ls -g --depth=0 --link=true
+
+print "Remove global @cremalab/scripts link..."
+cd packages/scripts
+npm unlink -g --no-save @cremalab/scripts
+cd ../../
+
+print "Global links..."
+npm ls -g --depth=0 --link=true
