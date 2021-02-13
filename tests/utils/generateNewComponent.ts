@@ -6,7 +6,7 @@ type Opts = {
 }
 
 export const generateNewComponent = ({ withExample, withState }: Opts) => {
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     const child = spawn("npm", ["run", "new:component"], {
       stdio: "pipe",
     })
