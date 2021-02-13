@@ -3,7 +3,6 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/utils.sh"
 
 # GLOBAL - SETUP
-bash "$DIR/global/setup-submodules.sh"
 bash "$DIR/global/setup-build.sh"
 bash "$DIR/package-links-create.sh"
 
