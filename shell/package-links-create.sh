@@ -15,8 +15,8 @@ cd ../../
 print "Global links..."
 npm ls -g --depth=0 --link=true
 
-print "Create global @cremalab/scripts-web link..."
-cd packages/scripts-web
+print "Create global @cremalab/scripts-mobile link..."
+cd packages/scripts-mobile
 npm link --force
 npm link @cremalab/scripts
 cd ../../
@@ -24,8 +24,8 @@ cd ../../
 print "Global links..."
 npm ls -g --depth=0 --link=true
 
-print "Create global @cremalab/scripts-mobile link..."
-cd packages/scripts-mobile
+print "Create global @cremalab/scripts-web link..."
+cd packages/scripts-web
 npm link --force
 npm link @cremalab/scripts
 cd ../../
