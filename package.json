@@ -4,7 +4,7 @@
     "dev:setup": "bash ./shell/dev-setup.sh",
     "dev:build": "npm run build",
     "dev:build:watch": "npm run start",
-    "dev:test": "jest --detectOpenHandles",
+    "dev:test": "jest --forceExit --detectOpenHandles --runInBand",
     "dev:test:watch": "npm run dev:test -- --watch",
     "dev:teardown": "bash ./shell/dev-teardown.sh",
     "bootstrap": "lerna bootstrap",
@@ -20,7 +20,7 @@
     "test:lint": "eslint -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'",
     "test:pack": "lerna run test:pack --stream",
     "test:unit:watch": "npm run test:unit -- --watch",
-    "test:unit": "jest --detectOpenHandles",
+    "test:unit": "jest --forceExit --detectOpenHandles --runInBand",
     "test:web:generators": "bash ./shell/web/testGenerators.sh"
   },
   "devDependencies": {

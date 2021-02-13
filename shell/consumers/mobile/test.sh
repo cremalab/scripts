@@ -4,4 +4,4 @@ source "$DIR/../../utils.sh"
 
 print "TESTING: Mobile"
 
-npx jest --detectOpenHandles -i --testPathPattern=tests/app-mobile
+npx jest --forceExit --detectOpenHandles --runInBand --testPathPattern=tests/app-mobile
