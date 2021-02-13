@@ -4,5 +4,5 @@ source "$DIR/../../utils.sh"
 
 print "INSTALLING: app-web dependencies"
 cd ./consumers/app-web
-npm i
+npm ci
 cd ../../
