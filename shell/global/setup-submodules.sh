@@ -4,4 +4,4 @@ source "$DIR/../utils.sh"
 
 print "CLONING: git submodules"
 
-git submodule update --remote
+git submodule update --remote --recursive

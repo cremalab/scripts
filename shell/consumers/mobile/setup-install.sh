@@ -4,5 +4,5 @@ source "$DIR/../../utils.sh"
 
 print "INSTALLING: app-mobile dependencies"
 cd ./consumers/app-mobile
-npm i
+npm ci
 cd ../../
