@@ -1,5 +1,5 @@
 ---
-to: src/utils/<%= name %>/<%= name %>.ts
+to: src/utils/<%= name %>/index.ts
 ---
 /**
  * <%= name %>
