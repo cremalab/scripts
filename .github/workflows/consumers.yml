@@ -14,6 +14,7 @@ jobs:
         with: 
           submodules: 'recursive'
       - run: sudo npm i -g npm@^7
+      - run: sudo chown -R 1001:121 '/usr/local/lib/node_modules'
       - run: sudo npm ci
       - run: sudo npm run ci:mobile
   app-web:
@@ -27,5 +28,6 @@ jobs:
         with: 
           submodules: 'recursive'
       - run: sudo npm i -g npm@^7
+      - run: sudo chown -R 1001:121 '/usr/local/lib/node_modules'
       - run: sudo npm ci
       - run: sudo npm run ci:web
