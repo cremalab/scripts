@@ -9,23 +9,37 @@ jobs:
     env:
       CI: true
       SKIP_PREFLIGHT_CHECK: true
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
         with: 
           submodules: 'recursive'
-      - run: sudo npm i -g npm@^7
-      - run: sudo npm ci
-      - run: sudo npm run ci:mobile
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i -g npm@^7
+      - run: npm ci
+      - run: npm run ci:mobile
   app-web:
     name: cremalab/app-web
     runs-on: ubuntu-latest
     env:
       CI: true
       SKIP_PREFLIGHT_CHECK: true
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
         with: 
           submodules: 'recursive'
-      - run: sudo npm i -g npm@^7
-      - run: sudo npm ci
-      - run: sudo npm run ci:web
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i -g npm@^7
+      - run: npm ci
+      - run: npm run ci:web
