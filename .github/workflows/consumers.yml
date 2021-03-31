@@ -16,8 +16,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: sudo chown -R 1001:121 "/root/.npm"
       - run: sudo npm i -g npm@^7
+      - run: sudo chown -R 1001:121 "/root/.npm"
       - run: sudo npm ci
       - run: sudo npm run ci:mobile
   app-web:
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: sudo chown -R 1001:121 "/root/.npm"
       - run: sudo npm i -g npm@^7
+      - run: sudo chown -R 1001:121 "/root/.npm"
       - run: sudo npm ci
       - run: sudo npm run ci:web
