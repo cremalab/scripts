@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '14'
       - run: sudo npm i -g npm@^7
-      - run: sudo chown -R 1000:1000 "~/.npm"
+      - run: sudo npm cache clean --force 
       - run: sudo npm ci
       - run: sudo npm run ci:mobile
   app-web:
@@ -34,6 +34,6 @@ jobs:
         with:
           node-version: '14'
       - run: sudo npm i -g npm@^7
-      - run: sudo chown -R 1000:1000 "~/.npm"
+      - run: sudo npm cache clean --force 
       - run: sudo npm ci
       - run: sudo npm run ci:web
