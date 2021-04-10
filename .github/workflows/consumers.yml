@@ -9,17 +9,10 @@ jobs:
     env:
       CI: true
       SKIP_PREFLIGHT_CHECK: true
-    strategy:
-      matrix:
-        node-version: [15.x]
     steps:
       - uses: actions/checkout@v2
         with: 
           submodules: 'recursive'
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run ci:mobile
   app-web:
@@ -28,16 +21,9 @@ jobs:
     env:
       CI: true
       SKIP_PREFLIGHT_CHECK: true
-    strategy:
-      matrix:
-        node-version: [15.x]
     steps:
       - uses: actions/checkout@v2
         with: 
           submodules: 'recursive'
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run ci:web
