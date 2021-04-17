@@ -4,4 +4,4 @@ source "$DIR/../../utils.sh"
 
 print "TESTING: Web"
 
-npx jest --forceExit --detectOpenHandles --runInBand --testPathPattern=tests/app-web
+npx jest --forceExit --detectOpenHandles --testPathPattern=tests/app-web

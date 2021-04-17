@@ -13,10 +13,10 @@ export const validateTypeScript = () => {
     })
 
     child.on("close", (signal) => {
-      if (signal === 1) {
-        resolve(msg)
-      } else {
+      if (signal === 0) {
         resolve("")
+      } else {
+        resolve(msg)
       }
     })
   })

@@ -3,12 +3,14 @@ import { generateNewType } from "../utils/generateNewType"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
 import { printTreeOfNew } from "../utils/printTreeOfNew"
 
-describe("new:type", () => {
-  beforeAll(navigateToConsumer("app-web"))
-  afterAll(cleanup("./src/types/Foo.ts"))
+beforeAll(navigateToConsumer("app-web"))
 
-  it("generates type file", async () => {
-    await generateNewType()
+describe("new:type", () => {
+  beforeAll(generateNewType)
+  
+  afterAll(() => cleanup("./src/types/Foo.ts"))
+
+  it("generates type file", () => {
     const tree = printTreeOfNew("types")
     expect(tree).toMatchInlineSnapshot(`
     "types
