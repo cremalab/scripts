@@ -5,7 +5,7 @@ import { printTreeOfNew } from "../utils/printTreeOfNew"
 
 describe("new:type", () => {
   beforeAll(navigateToConsumer("app-web"))
-  afterAll(cleanup)
+  afterAll(cleanup("./src/types/Foo.ts"))
 
   it("generates type file", async () => {
     await generateNewType()

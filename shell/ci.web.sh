@@ -4,9 +4,9 @@ source "$DIR/utils.sh"
 
 # GLOBAL - SETUP
 bash "$DIR/global/setup-build.sh"
-bash "$DIR/package-links-create.sh"
 
 # WEB
 bash "$DIR/consumers/web/setup-install.sh"
 bash "$DIR/consumers/web/setup-link.sh"
+bash "$DIR/package-links-create.sh"
 bash "$DIR/consumers/web/test.sh"
