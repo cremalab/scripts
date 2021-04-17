@@ -5,7 +5,7 @@ import { printTreeOfNew } from "../utils/printTreeOfNew"
 
 describe("new:util", () => {
   beforeAll(navigateToConsumer("app-web"))
-  afterAll(cleanup)
+  afterAll(cleanup("./src/utils/foo"))
 
   it("generates util with expected files", async () => {
     await generateNewUtil()

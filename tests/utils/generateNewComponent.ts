@@ -1,22 +1,23 @@
 import spawn from "cross-spawn"
 
 type Opts = {
+  name: string,
   withExample: boolean
   withState: boolean
 }
 
-export const generateNewComponent = ({ withExample, withState }: Opts) => {
+export const generateNewComponent = ({ name, withExample, withState }: Opts) => {
   return new Promise<void>((resolve) => {
     const child = spawn("npm", ["run", "new:component"], {
       stdio: "pipe",
     })
-    child.stdin?.write("foo\n")
+    child.stdin?.write(name + "\n")
     child.stdout?.on("data", (data) => {
       const message: string = data.toString()
 
       // Answer the question about example code
       const messageWithExample = message.includes(
-        "Did you want to generate <Foo /> with example code?",
+        `Did you want to generate <${name} /> with example code?`,
       )
       if (messageWithExample) {
         if (withExample) {
@@ -28,7 +29,7 @@ export const generateNewComponent = ({ withExample, withState }: Opts) => {
 
       // Answer the question about useState
       const messageWithState = message.includes(
-        "Did you want to include useState in the example <Foo />?",
+        `Did you want to include useState in the example <${name} />?`,
       )
       if (messageWithState) {
         if (withState) {

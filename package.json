@@ -7,7 +7,7 @@
     "dev:test": "jest --forceExit --detectOpenHandles --runInBand",
     "dev:test:watch": "npm run dev:test -- --watch",
     "dev:teardown": "bash ./shell/dev-teardown.sh",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --hoist",
     "build": "lerna run build",
     "clean": "lerna clean",
     "link": "lerna link",

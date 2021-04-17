@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`new:component with example and with state generates component with expected files 1`] = `
-"Foo
+"C
 ├── README.md
 ├── index.tsx
 ├── stories.tsx
@@ -10,7 +10,7 @@ exports[`new:component with example and with state generates component with expe
 `;
 
 exports[`new:component with example and with state generates directory with expected \`README.md\` contents 1`] = `
-"# \`<Foo />\`
+"# \`<C />\`
 
 DESCRIPTION_HERE
 
@@ -23,13 +23,13 @@ DESCRIPTION_HERE
 
 ## Example
 
-![Foo](../../../.loki/reference/chrome_Foo_example.png)
+![C](../../../.loki/reference/chrome_C_example.png)
 
-> Image location: [\`.loki/reference/chrome_Foo_example.png\`](../../../.loki/reference/chrome_Foo_example.png)
+> Image location: [\`.loki/reference/chrome_C_example.png\`](../../../.loki/reference/chrome_C_example.png)
 > 
 > To regenerate: 
 > 1. \`npm run test:playground\` (skip if running)
-> 1. \`npm run test:visual:update -- --storiesFilter=\\"^Foo example\\\\$\\"\`
+> 1. \`npm run test:visual:update -- --storiesFilter=\\"^C example\\\\$\\"\`
 "
 `;
 
@@ -38,7 +38,7 @@ exports[`new:component with example and with state generates directory with expe
 
 type Props = Readonly<{}>
 
-export function Foo(_: Props) {
+export function C(_: Props) {
   const [count, setCount] = useState(0)
 
   return (
@@ -54,7 +54,7 @@ export function Foo(_: Props) {
 exports[`new:component with example and with state generates directory with expected \`stories.tsx\` contents 1`] = `
 "import React from \\"react\\"
 import decoratorCentered from \\"@storybook/addon-centered\\"
-import { Foo } from \\".\\"
+import { C } from \\".\\"
 
 /**
  * See Storybook Docs: Writing Stories
@@ -62,26 +62,26 @@ import { Foo } from \\".\\"
  */
 
 export default {
-  title: \\"Foo\\",
+  title: \\"C\\",
   decorators: [decoratorCentered],
 }
 
-export const example = () => <Foo />
+export const example = () => <C />
 "
 `;
 
 exports[`new:component with example and with state generates directory with expected \`test.tsx\` contents 1`] = `
-"import { Foo } from \\".\\"
+"import { C } from \\".\\"
 import { render, fireEvent } from \\"@testing-library/react\\"
 import React from \\"react\\"
 
-describe(\\"Foo\\", () => {
+describe(\\"C\\", () => {
   it(\\"has correct message before clicking\\", () => {
     // Arrange
     const message = \\"You clicked 0 times\\"
 
     // Act
-    const { getByText } = render(<Foo />)
+    const { getByText } = render(<C />)
     const received = getByText(message)
 
     // Assert
@@ -94,7 +94,7 @@ describe(\\"Foo\\", () => {
     const message = \\"You clicked 1 times\\"
 
     // Act
-    const { getByText } = render(<Foo />)
+    const { getByText } = render(<C />)
     const button = getByText(buttonText)
     fireEvent.click(button)
     const received = getByText(message)
@@ -107,7 +107,7 @@ describe(\\"Foo\\", () => {
 `;
 
 exports[`new:component with example but without state generates component with expected files 1`] = `
-"Foo
+"B
 ├── README.md
 ├── index.tsx
 ├── stories.tsx
@@ -116,7 +116,7 @@ exports[`new:component with example but without state generates component with e
 `;
 
 exports[`new:component with example but without state generates directory with expected \`README.md\` contents 1`] = `
-"# \`<Foo />\`
+"# \`<B />\`
 
 DESCRIPTION_HERE
 
@@ -129,23 +129,23 @@ DESCRIPTION_HERE
 
 ## Example
 
-![Foo](../../../.loki/reference/chrome_Foo_example.png)
+![B](../../../.loki/reference/chrome_B_example.png)
 
-> Image location: [\`.loki/reference/chrome_Foo_example.png\`](../../../.loki/reference/chrome_Foo_example.png)
+> Image location: [\`.loki/reference/chrome_B_example.png\`](../../../.loki/reference/chrome_B_example.png)
 > 
 > To regenerate: 
 > 1. \`npm run test:playground\` (skip if running)
-> 1. \`npm run test:visual:update -- --storiesFilter=\\"^Foo example\\\\$\\"\`
+> 1. \`npm run test:visual:update -- --storiesFilter=\\"^B example\\\\$\\"\`
 "
 `;
 
 exports[`new:component with example but without state generates directory with expected \`index.tsx\` contents 1`] = `
 "type Props = Readonly<{}>
 
-export function Foo(_: Props) {
+export function B(_: Props) {
   return (
     <div>
-      <p>Foo</p>
+      <p>B</p>
     </div>
   )
 }
@@ -155,7 +155,7 @@ export function Foo(_: Props) {
 exports[`new:component with example but without state generates directory with expected \`stories.tsx\` contents 1`] = `
 "import React from \\"react\\"
 import decoratorCentered from \\"@storybook/addon-centered\\"
-import { Foo } from \\".\\"
+import { B } from \\".\\"
 
 /**
  * See Storybook Docs: Writing Stories
@@ -163,26 +163,26 @@ import { Foo } from \\".\\"
  */
 
 export default {
-  title: \\"Foo\\",
+  title: \\"B\\",
   decorators: [decoratorCentered],
 }
 
-export const example = () => <Foo />
+export const example = () => <B />
 "
 `;
 
 exports[`new:component with example but without state generates directory with expected \`test.tsx\` contents 1`] = `
-"import { Foo } from \\".\\"
+"import { B } from \\".\\"
 import { render } from \\"@testing-library/react\\"
 import React from \\"react\\"
 
-describe(\\"Foo\\", () => {
+describe(\\"B\\", () => {
   it(\\"name prop is rendered\\", () => {
     // Arrange
-    const name = \\"Foo\\"
+    const name = \\"B\\"
 
     // Act
-    const { getByText } = render(<Foo />)
+    const { getByText } = render(<B />)
     const received = getByText(name)
 
     // Assert
@@ -193,7 +193,7 @@ describe(\\"Foo\\", () => {
 `;
 
 exports[`new:component without example code generates directory with expected \`README.md\` contents 1`] = `
-"# \`<Foo />\`
+"# \`<A />\`
 
 DESCRIPTION_HERE
 
@@ -206,18 +206,18 @@ DESCRIPTION_HERE
 
 ## Example
 
-![Foo](../../../.loki/reference/chrome_Foo_example.png)
+![A](../../../.loki/reference/chrome_A_example.png)
 
-> Image location: [\`.loki/reference/chrome_Foo_example.png\`](../../../.loki/reference/chrome_Foo_example.png)
+> Image location: [\`.loki/reference/chrome_A_example.png\`](../../../.loki/reference/chrome_A_example.png)
 > 
 > To regenerate: 
 > 1. \`npm run test:playground\` (skip if running)
-> 1. \`npm run test:visual:update -- --storiesFilter=\\"^Foo example\\\\$\\"\`
+> 1. \`npm run test:visual:update -- --storiesFilter=\\"^A example\\\\$\\"\`
 "
 `;
 
 exports[`new:component without example code generates directory with expected \`index.tsx\` contents 1`] = `
-"export function Foo() {
+"export function A() {
   return <></>
 }
 "
@@ -226,7 +226,7 @@ exports[`new:component without example code generates directory with expected \`
 exports[`new:component without example code generates directory with expected \`stories.tsx\` contents 1`] = `
 "import React from \\"react\\"
 import decoratorCentered from \\"@storybook/addon-centered\\"
-import { Foo } from \\".\\"
+import { A } from \\".\\"
 
 /**
  * See Storybook Docs: Writing Stories
@@ -234,26 +234,26 @@ import { Foo } from \\".\\"
  */
 
 export default {
-  title: \\"Foo\\",
+  title: \\"A\\",
   decorators: [decoratorCentered],
 }
 
-export const example = () => <Foo />
+export const example = () => <A />
 "
 `;
 
 exports[`new:component without example code generates directory with expected \`test.tsx\` contents 1`] = `
-"import { Foo } from \\".\\"
+"import { A } from \\".\\"
 import React from \\"react\\"
 
-describe(\\"Foo\\", () => {
-  it.todo(\`Foo needs to be tested\`)
+describe(\\"A\\", () => {
+  it.todo(\`A needs to be tested\`)
 })
 "
 `;
 
 exports[`new:component without example code generates directory with expected files 1`] = `
-"Foo
+"A
 ├── README.md
 ├── index.tsx
 ├── stories.tsx
