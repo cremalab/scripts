@@ -1,9 +1,9 @@
 ---
-to: src/components/<%= name %>/stories.tsx
+to: src/components/<%= name %>/<%= name %>.stories.tsx
 ---
 import React from "react"
 import decoratorCentered from "@storybook/addon-centered"
-import { <%= name %> } from "."
+import { <%= name %> } from "./<%= name %>"
 
 /**
  * See Storybook Docs: Writing Stories
