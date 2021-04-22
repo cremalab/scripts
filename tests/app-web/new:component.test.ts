@@ -14,7 +14,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/A"))
 
-    it("files", async () => {
+    it("files", (done) => {
       const tree = printTreeOfNew("components", "A")
       expect(tree).toMatchInlineSnapshot(`
       "A
@@ -25,6 +25,7 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
+      done()
     })
 
     it("A.stories.tsx contents", async () => {
@@ -60,7 +61,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/B"))
 
-    it("files", async () => {
+    it("files", (done) => {
       const tree = printTreeOfNew("components", "B")
       expect(tree).toMatchInlineSnapshot(`
       "B
@@ -71,6 +72,7 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
+      done()
     })
 
     it("B.stories.tsx contents", async () => {
@@ -106,7 +108,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/C"))
 
-    it("files", async () => {
+    it("files", (done) => {
       const tree = printTreeOfNew("components", "C")
       expect(tree).toMatchInlineSnapshot(`
       "C
@@ -117,6 +119,7 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
+      done()
     })
 
     it("C.stories.tsx contents", async () => {

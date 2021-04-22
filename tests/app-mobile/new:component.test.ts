@@ -20,7 +20,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/A"))
 
-    it("generates directory with expected files", async () => {
+    it("generates directory with expected files", () => {
       const tree = printTreeOfNew("components", "A")
       expect(tree).toMatchSnapshot()
     })
@@ -53,7 +53,7 @@ describe("new:component", () => {
 
     afterAll(() => cleanup("./src/components/B"))
     
-    it("generates component with expected files", async () => {
+    it("generates component with expected files", () => {
       const tree = printTreeOfNew("components", "B")
       expect(tree).toMatchSnapshot()
     })
@@ -86,7 +86,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/C"))
 
-    it("generates component with expected files", async () => {
+    it("generates component with expected files", () => {
       const tree = printTreeOfNew("components", "C")
       expect(tree).toMatchSnapshot()
     })
