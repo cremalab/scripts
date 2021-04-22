@@ -1,71 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`new:component with example and with state generates component with expected files 1`] = `
-"C
-├── README.md
-├── index.tsx
-├── stories.tsx
-└── test.tsx
-"
-`;
-
-exports[`new:component with example and with state generates directory with expected \`README.md\` contents 1`] = `
-"# \`<C />\`
-
-DESCRIPTION_HERE
-
-## Directory Structure
-
-- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
-- \`test.tsx\`: Component tests (\`npm run test:unit\`)
-- \`index.tsx\`: Component code
-- \`README.md\`: Component documentation (hey, that's me!)
-
-## Example
-
-![C](../../../.loki/reference/chrome_C_example.png)
-
-> Image location: [\`.loki/reference/chrome_C_example.png\`](../../../.loki/reference/chrome_C_example.png)
-> 
-> To regenerate: 
-> 1. \`npm run test:playground\` (skip if running)
-> 1. \`npm run test:visual:update -- --storiesFilter=\\"^C example\\\\$\\"\`
-"
-`;
-
-exports[`new:component with example and with state generates directory with expected \`index.tsx\` contents 1`] = `
-"import React, { useState } from \\"react\\"
-import { Button, StyleSheet, Text, View } from \\"react-native\\"
-
-type Props = Readonly<{}>
-
-export function C(_: Props) {
-  const [count, setCount] = useState(0)
-  return (
-    <View style={styles.container}>
-      <Text>You clicked {count} times</Text>
-      <Button onPress={() => setCount(count + 1)} title=\\"C\\" />
-    </View>
-  )
-}
-
-const styles = StyleSheet.create({
-  container: {},
-})
-"
-`;
-
-exports[`new:component with example and with state generates directory with expected \`stories.tsx\` contents 1`] = `
+exports[`new:component with example code and with state generates expected C.stories.tsx contents 1`] = `
 "import { storiesOf } from \\"@storybook/react-native\\"
 import React from \\"react\\"
-import { C } from \\".\\"
+import { C } from \\"./C\\"
 
 storiesOf(\\"C\\", module).add(\\"example\\", () => <C />)
 "
 `;
 
-exports[`new:component with example and with state generates directory with expected \`test.tsx\` contents 1`] = `
-"import { C } from \\".\\"
+exports[`new:component with example code and with state generates expected C.test.tsx contents 1`] = `
+"import { C } from \\"./C\\"
 import { render, fireEvent } from \\"@testing-library/react-native\\"
 import React from \\"react\\"
 
@@ -100,16 +45,108 @@ describe(\\"C\\", () => {
 "
 `;
 
-exports[`new:component with example but without state generates component with expected files 1`] = `
-"B
-├── README.md
-├── index.tsx
-├── stories.tsx
-└── test.tsx
+exports[`new:component with example code and with state generates expected C.tsx contents 1`] = `
+"import React, { useState } from \\"react\\"
+import { Button, StyleSheet, Text, View } from \\"react-native\\"
+
+type Props = Readonly<{}>
+
+export function C(_: Props) {
+  const [count, setCount] = useState(0)
+  return (
+    <View style={styles.container}>
+      <Text>You clicked {count} times</Text>
+      <Button onPress={() => setCount(count + 1)} title=\\"C\\" />
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {},
+})
 "
 `;
 
-exports[`new:component with example but without state generates directory with expected \`README.md\` contents 1`] = `
+exports[`new:component with example code and with state generates expected README.md contents 1`] = `
+"# \`<C />\`
+
+DESCRIPTION_HERE
+
+## Directory Structure
+
+- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
+- \`test.tsx\`: Component tests (\`npm run test:unit\`)
+- \`index.tsx\`: Component code
+- \`README.md\`: Component documentation (hey, that's me!)
+
+## Example
+
+![C](../../../.loki/reference/chrome_C_example.png)
+
+> Image location: [\`.loki/reference/chrome_C_example.png\`](../../../.loki/reference/chrome_C_example.png)
+> 
+> To regenerate: 
+> 1. \`npm run test:playground\` (skip if running)
+> 1. \`npm run test:visual:update -- --storiesFilter=\\"^C example\\\\$\\"\`
+"
+`;
+
+exports[`new:component with example code and with state generates expected index.ts contents 1`] = `
+"export { C } from \\"./C\\"
+"
+`;
+
+exports[`new:component with example code but without state generates expected B.stories.tsx contents 1`] = `
+"import { storiesOf } from \\"@storybook/react-native\\"
+import React from \\"react\\"
+import { B } from \\"./B\\"
+
+storiesOf(\\"B\\", module).add(\\"example\\", () => <B />)
+"
+`;
+
+exports[`new:component with example code but without state generates expected B.test.tsx contents 1`] = `
+"import { B } from \\"./B\\"
+import { render } from \\"@testing-library/react-native\\"
+import React from \\"react\\"
+
+describe(\\"B\\", () => {
+  it(\\"name prop is rendered\\", () => {
+    // Arrange
+    const name = \\"B\\"
+
+    // Act
+    const { getByText } = render(<B />)
+    const received = getByText(name)
+
+    // Assert
+    expect(received).toBeDefined()
+  })
+})
+"
+`;
+
+exports[`new:component with example code but without state generates expected B.tsx contents 1`] = `
+"import React from \\"react\\"
+import { StyleSheet, Text, View } from \\"react-native\\"
+
+type Props = Readonly<{}>
+
+export function B(_: Props) {
+  return (
+    <View style={styles.container}>
+      <Text>B</Text>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {},
+})
+"
+`;
+
+exports[`new:component with example code but without state generates expected README.md contents 1`] = `
 "# \`<B />\`
 
 DESCRIPTION_HERE
@@ -133,57 +170,40 @@ DESCRIPTION_HERE
 "
 `;
 
-exports[`new:component with example but without state generates directory with expected \`index.tsx\` contents 1`] = `
-"import React from \\"react\\"
-import { StyleSheet, Text, View } from \\"react-native\\"
-
-type Props = Readonly<{}>
-
-export function B(_: Props) {
-  return (
-    <View style={styles.container}>
-      <Text>B</Text>
-    </View>
-  )
-}
-
-const styles = StyleSheet.create({
-  container: {},
-})
+exports[`new:component with example code but without state generates expected index.ts contents 1`] = `
+"export { B } from \\"./B\\"
 "
 `;
 
-exports[`new:component with example but without state generates directory with expected \`stories.tsx\` contents 1`] = `
+exports[`new:component without example code generates expected A.stories.tsx contents 1`] = `
 "import { storiesOf } from \\"@storybook/react-native\\"
 import React from \\"react\\"
-import { B } from \\".\\"
+import { A } from \\"./A\\"
 
-storiesOf(\\"B\\", module).add(\\"example\\", () => <B />)
+storiesOf(\\"A\\", module).add(\\"example\\", () => <A />)
 "
 `;
 
-exports[`new:component with example but without state generates directory with expected \`test.tsx\` contents 1`] = `
-"import { B } from \\".\\"
-import { render } from \\"@testing-library/react-native\\"
+exports[`new:component without example code generates expected A.test.tsx contents 1`] = `
+"import { A } from \\"./A\\"
 import React from \\"react\\"
 
-describe(\\"B\\", () => {
-  it(\\"name prop is rendered\\", () => {
-    // Arrange
-    const name = \\"B\\"
-
-    // Act
-    const { getByText } = render(<B />)
-    const received = getByText(name)
-
-    // Assert
-    expect(received).toBeDefined()
-  })
+describe(\\"A\\", () => {
+  it.todo(\`A needs to be tested\`)
 })
 "
 `;
 
-exports[`new:component without example code generates directory with expected \`README.md\` contents 1`] = `
+exports[`new:component without example code generates expected A.tsx contents 1`] = `
+"import React from \\"react\\"
+
+export function A() {
+  return <></>
+}
+"
+`;
+
+exports[`new:component without example code generates expected README.md contents 1`] = `
 "# \`<A />\`
 
 DESCRIPTION_HERE
@@ -207,39 +227,7 @@ DESCRIPTION_HERE
 "
 `;
 
-exports[`new:component without example code generates directory with expected \`index.tsx\` contents 1`] = `
-"import React from \\"react\\"
-
-export function A() {
-  return <></>
-}
-"
-`;
-
-exports[`new:component without example code generates directory with expected \`stories.tsx\` contents 1`] = `
-"import { storiesOf } from \\"@storybook/react-native\\"
-import React from \\"react\\"
-import { A } from \\".\\"
-
-storiesOf(\\"A\\", module).add(\\"example\\", () => <A />)
-"
-`;
-
-exports[`new:component without example code generates directory with expected \`test.tsx\` contents 1`] = `
-"import { A } from \\".\\"
-import React from \\"react\\"
-
-describe(\\"A\\", () => {
-  it.todo(\`A needs to be tested\`)
-})
-"
-`;
-
-exports[`new:component without example code generates directory with expected files 1`] = `
-"A
-├── README.md
-├── index.tsx
-├── stories.tsx
-└── test.tsx
+exports[`new:component without example code generates expected index.ts contents 1`] = `
+"export { A } from \\"./A\\"
 "
 `;

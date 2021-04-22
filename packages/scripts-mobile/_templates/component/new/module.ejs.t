@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= name %>/index.tsx
+to: src/components/<%= name %>/<%= name %>.tsx
 ---
 <% if(!withExample) { -%>
 import React from "react"
