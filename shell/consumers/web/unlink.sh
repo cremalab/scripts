@@ -5,11 +5,6 @@ source "$DIR/../../utils.sh"
 print "UNLINK: app-web from @cremalab/scripts-web"
 
 cd consumers/app-web
-npm unlink --no-save @cremalab/scripts-web
-cd ../../
-
-print "UNLINK: Remove global link for @cremalab/scripts-web"
-
-cd packages/scripts-web
-npm unlink
+npm unlink @cremalab/scripts-web --no-save
+npm i
 cd ../../
