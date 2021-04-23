@@ -4,101 +4,146 @@ import { navigateToConsumer } from "../utils/navigateToConsumer"
 import { printFileContents } from "../utils/printFileContents"
 import { printTreeOfNew } from "../utils/printTreeOfNew"
 
-describe("new:component", () => {
-  beforeAll(navigateToConsumer("app-web"))
+beforeAll(navigateToConsumer("app-web"))
 
-  describe("without example code", () => {
-    afterAll(cleanup("./src/components/A"))
+describe("new:component", () => {
+  describe("without example code generates expected", () => {
     beforeAll(() =>
       generateNewComponent({ name: "A", withExample: false, withState: false }),
     )
+    
+    afterAll(() => cleanup("./src/components/A"))
 
-    it("generates directory with expected files", async () => {
+    it("files", (done) => {
       const tree = printTreeOfNew("components", "A")
-      expect(tree).toMatchSnapshot()
+      expect(tree).toMatchInlineSnapshot(`
+      "A
+      ├── A.stories.tsx
+      ├── A.test.tsx
+      ├── A.tsx
+      ├── README.md
+      └── index.ts
+      "
+      `)
+      done()
     })
 
-    it("generates directory with expected `index.tsx` contents", async () => {
-      const fileContents = printFileContents("./src/components/A/index.tsx")
+    it("A.stories.tsx contents", async () => {
+      const fileContents = await printFileContents("./src/components/A/A.stories.tsx")
       expect(fileContents).toMatchSnapshot()
     })
 
-    it("generates directory with expected `README.md` contents", async () => {
-      const fileContents = printFileContents("./src/components/A/README.md")
+    it("A.test.tsx contents", async () => {
+      const fileContents = await printFileContents("./src/components/A/A.test.tsx")
       expect(fileContents).toMatchSnapshot()
     })
 
-    it("generates directory with expected `stories.tsx` contents", async () => {
-      const fileContents = printFileContents("./src/components/A/stories.tsx")
+    it("A.tsx contents", async () => {
+      const fileContents = await printFileContents("./src/components/A/A.tsx")
       expect(fileContents).toMatchSnapshot()
     })
-
-    it("generates directory with expected `test.tsx` contents", async () => {
-      const fileContents = printFileContents("./src/components/A/test.tsx")
+    
+    it("README.md contents", async () => {
+      const fileContents = await printFileContents("./src/components/A/README.md")
+      expect(fileContents).toMatchSnapshot()
+    })
+    
+    it("index.ts contents", async () => {
+      const fileContents = await printFileContents("./src/components/A/index.ts")
       expect(fileContents).toMatchSnapshot()
     })
   })
 
-  describe("with example but without state", () => {
-    afterAll(cleanup("./src/components/B"))
+  describe("with example code but without state generates expected", () => {
     beforeAll(() =>
       generateNewComponent({ name: "B", withExample: true, withState: false }),
     )
+    
+    afterAll(() => cleanup("./src/components/B"))
 
-    it("generates component with expected files", async () => {
+    it("files", (done) => {
       const tree = printTreeOfNew("components", "B")
-      expect(tree).toMatchSnapshot()
+      expect(tree).toMatchInlineSnapshot(`
+      "B
+      ├── B.stories.tsx
+      ├── B.test.tsx
+      ├── B.tsx
+      ├── README.md
+      └── index.ts
+      "
+      `)
+      done()
     })
 
-    it("generates directory with expected `index.tsx` contents", async () => {
-      const fileContents = printFileContents("./src/components/B/index.tsx")
+    it("B.stories.tsx contents", async () => {
+      const fileContents = await printFileContents("./src/components/B/B.stories.tsx")
       expect(fileContents).toMatchSnapshot()
     })
 
-    it("generates directory with expected `README.md` contents", async () => {
-      const fileContents = printFileContents("./src/components/B/README.md")
+    it("B.test.tsx contents", async () => {
+      const fileContents = await printFileContents("./src/components/B/B.test.tsx")
       expect(fileContents).toMatchSnapshot()
     })
 
-    it("generates directory with expected `stories.tsx` contents", async () => {
-      const fileContents = printFileContents("./src/components/B/stories.tsx")
+    it("B.tsx contents", async () => {
+      const fileContents = await printFileContents("./src/components/B/B.tsx")
       expect(fileContents).toMatchSnapshot()
     })
-
-    it("generates directory with expected `test.tsx` contents", async () => {
-      const fileContents = printFileContents("./src/components/B/test.tsx")
+    
+    it("README.md contents", async () => {
+      const fileContents = await printFileContents("./src/components/B/README.md")
+      expect(fileContents).toMatchSnapshot()
+    })
+    
+    it("index.ts contents", async () => {
+      const fileContents = await printFileContents("./src/components/B/index.ts")
       expect(fileContents).toMatchSnapshot()
     })
   })
 
-  describe("with example and with state", () => {
-    afterAll(cleanup("./src/components/C"))
+  describe("with example code and with state generates expected", () => {
     beforeAll(() =>
       generateNewComponent({ name: "C", withExample: true, withState: true }),
     )
+    
+    afterAll(() => cleanup("./src/components/C"))
 
-    it("generates component with expected files", async () => {
+    it("files", (done) => {
       const tree = printTreeOfNew("components", "C")
-      expect(tree).toMatchSnapshot()
+      expect(tree).toMatchInlineSnapshot(`
+      "C
+      ├── C.stories.tsx
+      ├── C.test.tsx
+      ├── C.tsx
+      ├── README.md
+      └── index.ts
+      "
+      `)
+      done()
     })
 
-    it("generates directory with expected `index.tsx` contents", async () => {
-      const fileContents = printFileContents("./src/components/C/index.tsx")
+    it("C.stories.tsx contents", async () => {
+      const fileContents = await printFileContents("./src/components/C/C.stories.tsx")
       expect(fileContents).toMatchSnapshot()
     })
 
-    it("generates directory with expected `README.md` contents", async () => {
-      const fileContents = printFileContents("./src/components/C/README.md")
+    it("C.test.tsx contents", async () => {
+      const fileContents = await printFileContents("./src/components/C/C.test.tsx")
       expect(fileContents).toMatchSnapshot()
     })
 
-    it("generates directory with expected `stories.tsx` contents", async () => {
-      const fileContents = printFileContents("./src/components/C/stories.tsx")
+    it("C.tsx contents", async () => {
+      const fileContents = await printFileContents("./src/components/C/C.tsx")
       expect(fileContents).toMatchSnapshot()
     })
-
-    it("generates directory with expected `test.tsx` contents", async () => {
-      const fileContents = printFileContents("./src/components/C/test.tsx")
+    
+    it("README.md contents", async () => {
+      const fileContents = await printFileContents("./src/components/C/README.md")
+      expect(fileContents).toMatchSnapshot()
+    })
+    
+    it("index.ts contents", async () => {
+      const fileContents = await printFileContents("./src/components/C/index.ts")
       expect(fileContents).toMatchSnapshot()
     })
   })

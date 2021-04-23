@@ -1,7 +1,7 @@
 ---
-to: src/utils/<%= name %>/test.ts
+to: src/utils/<%= name %>/<%= name %>.test.ts
 ---
-import { <%= name %> } from "."
+import { <%= name %> } from "./<%= name %>"
 
 describe("<%= name %>", () => {
   it("works", () => {

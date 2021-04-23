@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`new:util generates directory with expected \`foo.ts\` contents 1`] = `
+"/**
+ * foo
+ * ------------------------------------------------
+ * DESCRIPTION_HERE
+ */
+
+export const foo = <A>(x: A) => x
+"
+`;
+
+exports[`new:util generates directory with expected \`index.ts\` contents 1`] = `
+"export { foo } from \\"./foo\\"
+"
+`;
+
+exports[`new:util generates directory with expected \`test.ts\` contents 1`] = `
+"import { foo } from \\"./foo\\"
+
+describe(\\"foo\\", () => {
+  it(\\"works\\", () => {
+    // Arrange
+    const valA = 1
+
+    // Act
+    const received = foo(valA)
+    const expected = 1
+
+    // Assert
+    expect(received).toEqual(expected)
+  })
+})
+"
+`;

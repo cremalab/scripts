@@ -14,7 +14,7 @@ jobs:
         with: 
           submodules: 'recursive'
       - run: npm ci
-      - run: npm run ci:mobile
+      - run: sudo npm run ci:mobile
   app-web:
     name: cremalab/app-web
     runs-on: ubuntu-latest
@@ -26,4 +26,4 @@ jobs:
         with: 
           submodules: 'recursive'
       - run: npm ci
-      - run: npm run ci:web
+      - run: sudo npm run ci:web

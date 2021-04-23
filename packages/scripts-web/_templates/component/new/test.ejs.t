@@ -1,15 +1,14 @@
 ---
-to: src/components/<%= name %>/test.tsx
+to: src/components/<%= name %>/<%= name %>.test.tsx
 ---
+import { <%= name %> } from "./<%= name %>"
 <% if(!withExample) { -%>
-import { <%= name %> } from "."
 import React from "react"
 
 describe("<%= name %>", () => {
   it.todo(`<%= name %> needs to be tested`)
 })
 <% } else if(useState) { -%>
-import { <%= name %> } from "."
 import { render, fireEvent } from "@testing-library/react"
 import React from "react"
 
@@ -42,7 +41,6 @@ describe("<%= name %>", () => {
   })
 })
 <% } else { -%>
-import { <%= name %> } from "."
 import { render } from "@testing-library/react"
 import React from "react"
 
