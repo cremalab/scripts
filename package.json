@@ -16,6 +16,7 @@
     "ci:mobile": "bash ./shell/ci.mobile.sh",
     "ci:web": "bash ./shell/ci.web.sh",
     "ci": "bash ./shell/ci.sh",
+    "pack": "lerna run pack --stream",
     "test:lint:fix": "npm run test:lint -- --fix",
     "test:lint": "eslint -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'",
     "test:pack": "lerna run test:pack --stream",
