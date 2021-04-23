@@ -7,6 +7,5 @@ bash "$DIR/consumers/web/unlink.sh"
 # MOBILE
 bash "$DIR/consumers/mobile/unlink.sh"
 
-# Global
-bash "$DIR/global/unlink.sh"
-
+# GLOBAL - Remove package links
+bash "$DIR/package-links-remove.sh"

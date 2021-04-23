@@ -2,8 +2,6 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/../utils.sh"
 
-print "LINKING: Create link for @cremalab/scripts"
+print "TESTING: Mobile & Web"
 
-cd packages/scripts
-npm link
-cd ../../
+npx jest --forceExit --detectOpenHandles

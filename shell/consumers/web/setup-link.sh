@@ -5,5 +5,5 @@ source "$DIR/../../utils.sh"
 print "LINKING: Link app-web to @cremalab/scripts-web"
 
 cd consumers/app-web
-npm link --force ../../packages/scripts-web
+npm link @cremalab/scripts-web
 cd ../../
