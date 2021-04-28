@@ -4,6 +4,7 @@ import { generateNewComponent } from "../utils/generateNewComponent"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
 import { printFileContents } from "../utils/printFileContents"
 import { printTreeOfNew } from "../utils/printTreeOfNew"
+import { validateUnitTests } from "../utils/validateUnitTests"
 
 beforeAll(navigateToConsumer("app-web"))
 
@@ -41,6 +42,11 @@ describe("new:component", () => {
     it("A.test.tsx contents", async () => {
       const fileContents = await printFileContents("./src/components/A/A.test.tsx")
       expect(fileContents).toMatchSnapshot()
+    })
+
+    it("A.test.tsx tests pass", async () => {
+      const result = await validateUnitTests("./src/components/A/A.test.tsx")
+      expect(result).toEqual("PASS ./src/components/A/A.test.tsx")
     })
 
     it("A.tsx contents", async () => {
@@ -94,6 +100,11 @@ describe("new:component", () => {
       expect(fileContents).toMatchSnapshot()
     })
 
+    it("B.test.tsx tests pass", async () => {
+      const result = await validateUnitTests("./src/components/B/B.test.tsx")
+      expect(result).toEqual("PASS ./src/components/B/B.test.tsx")
+    })
+
     it("B.tsx contents", async () => {
       const fileContents = await printFileContents("./src/components/B/B.tsx")
       expect(fileContents).toMatchSnapshot()
@@ -143,6 +154,11 @@ describe("new:component", () => {
     it("C.test.tsx contents", async () => {
       const fileContents = await printFileContents("./src/components/C/C.test.tsx")
       expect(fileContents).toMatchSnapshot()
+    })
+
+    it("C.test.tsx tests pass", async () => {
+      const result = await validateUnitTests("./src/components/C/C.test.tsx")
+      expect(result).toEqual("PASS ./src/components/C/C.test.tsx")
     })
 
     it("C.tsx contents", async () => {
