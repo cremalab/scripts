@@ -5,7 +5,7 @@ import { <%= name %> } from "./<%= name %>"
 <% if(!withExample) { -%>
 
 describe("<%= name %>", () => {
-  it("is defined", expect(<%= name %>).toBeDefined)
+  it("is defined", () => expect(<%= name %>).toBeDefined())
 
   it.todo(`add meaningful tests 👍`)
 })
