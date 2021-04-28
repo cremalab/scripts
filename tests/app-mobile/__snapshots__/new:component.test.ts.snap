@@ -2,6 +2,7 @@
 
 exports[`new:component with example code and with state generates expected C.stories.tsx contents 1`] = `
 "import { storiesOf } from \\"@storybook/react-native\\"
+import React from \\"react\\"
 import { C } from \\"./C\\"
 
 storiesOf(\\"C\\", module).add(\\"example\\", () => <C />)
@@ -11,6 +12,7 @@ storiesOf(\\"C\\", module).add(\\"example\\", () => <C />)
 exports[`new:component with example code and with state generates expected C.test.tsx contents 1`] = `
 "import { C } from \\"./C\\"
 import { render, fireEvent } from \\"@testing-library/react-native\\"
+import React from \\"react\\"
 
 describe(\\"C\\", () => {
   it(\\"has correct message before clicking\\", () => {
@@ -44,7 +46,7 @@ describe(\\"C\\", () => {
 `;
 
 exports[`new:component with example code and with state generates expected C.tsx contents 1`] = `
-"import { useState } from \\"react\\"
+"import React, { useState } from \\"react\\"
 import { Button, StyleSheet, Text, View } from \\"react-native\\"
 
 type Props = Readonly<{}>
@@ -96,6 +98,7 @@ exports[`new:component with example code and with state generates expected index
 
 exports[`new:component with example code but without state generates expected B.stories.tsx contents 1`] = `
 "import { storiesOf } from \\"@storybook/react-native\\"
+import React from \\"react\\"
 import { B } from \\"./B\\"
 
 storiesOf(\\"B\\", module).add(\\"example\\", () => <B />)
@@ -105,6 +108,7 @@ storiesOf(\\"B\\", module).add(\\"example\\", () => <B />)
 exports[`new:component with example code but without state generates expected B.test.tsx contents 1`] = `
 "import { B } from \\"./B\\"
 import { render } from \\"@testing-library/react-native\\"
+import React from \\"react\\"
 
 describe(\\"B\\", () => {
   it(\\"name prop is rendered\\", () => {
@@ -123,7 +127,8 @@ describe(\\"B\\", () => {
 `;
 
 exports[`new:component with example code but without state generates expected B.tsx contents 1`] = `
-"import { StyleSheet, Text, View } from \\"react-native\\"
+"import React from \\"react\\"
+import { StyleSheet, Text, View } from \\"react-native\\"
 
 type Props = Readonly<{}>
 
@@ -172,6 +177,7 @@ exports[`new:component with example code but without state generates expected in
 
 exports[`new:component without example code generates expected A.stories.tsx contents 1`] = `
 "import { storiesOf } from \\"@storybook/react-native\\"
+import React from \\"react\\"
 import { A } from \\"./A\\"
 
 storiesOf(\\"A\\", module).add(\\"example\\", () => <A />)
@@ -180,6 +186,7 @@ storiesOf(\\"A\\", module).add(\\"example\\", () => <A />)
 
 exports[`new:component without example code generates expected A.test.tsx contents 1`] = `
 "import { A } from \\"./A\\"
+import React from \\"react\\"
 
 describe(\\"A\\", () => {
   it(\\"is defined\\", () => expect(A).toBeDefined())
@@ -190,7 +197,9 @@ describe(\\"A\\", () => {
 `;
 
 exports[`new:component without example code generates expected A.tsx contents 1`] = `
-"export function A() {
+"import React from \\"react\\"
+
+export function A() {
   return <></>
 }
 "

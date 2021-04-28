@@ -3,6 +3,7 @@ to: src/components/<%= name %>/<%= name %>.test.tsx
 ---
 import { <%= name %> } from "./<%= name %>"
 <% if(!withExample) { -%>
+import React from "react"
 
 describe("<%= name %>", () => {
   it("is defined", () => expect(<%= name %>).toBeDefined())
@@ -11,6 +12,7 @@ describe("<%= name %>", () => {
 })
 <% } else if(useState) { -%>
 import { render, fireEvent } from "@testing-library/react-native"
+import React from "react"
 
 describe("<%= name %>", () => {
   it("has correct message before clicking", () => {
@@ -42,6 +44,7 @@ describe("<%= name %>", () => {
 })
 <% } else { -%>
 import { render } from "@testing-library/react-native"
+import React from "react"
 
 describe("<%= name %>", () => {
   it("name prop is rendered", () => {
