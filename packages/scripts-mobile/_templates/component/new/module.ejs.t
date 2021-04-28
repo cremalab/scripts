@@ -2,13 +2,11 @@
 to: src/components/<%= name %>/<%= name %>.tsx
 ---
 <% if(!withExample) { -%>
-import React from "react"
-
 export function <%= name %>() {
   return <></>
 }
 <% } else if(useState) { -%>
-import React, { useState } from "react"
+import { useState } from "react"
 import { Button, StyleSheet, Text, View } from "react-native"
 
 type Props = Readonly<{}>
@@ -27,7 +25,6 @@ const styles = StyleSheet.create({
   container: {},
 })
 <% } else { -%>
-import React from "react"
 import { StyleSheet, Text, View } from "react-native"
 
 type Props = Readonly<{}>
