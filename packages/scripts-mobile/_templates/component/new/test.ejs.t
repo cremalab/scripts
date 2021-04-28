@@ -6,7 +6,7 @@ import { <%= name %> } from "./<%= name %>"
 import React from "react"
 
 describe("<%= name %>", () => {
-  it("is defined", () => expect(<%= name %>).toBeDefined())
+  it("is defined", () => expect(<<%= name %> />).toBeDefined())
 
   it.todo(`add meaningful tests 👍`)
 })

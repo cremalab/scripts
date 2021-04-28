@@ -56,7 +56,7 @@ export function C(_: Props) {
   return (
     <View style={styles.container}>
       <Text>You clicked {count} times</Text>
-      <Button onPress={() => setCount(count + 1)} title=\\"C\\" />
+      <Button onPress={() => setCount(count + 1)} title=\\"Click Me\\" />
     </View>
   )
 }
@@ -189,7 +189,7 @@ exports[`new:component without example code generates expected A.test.tsx conten
 import React from \\"react\\"
 
 describe(\\"A\\", () => {
-  it(\\"is defined\\", () => expect(A).toBeDefined())
+  it(\\"is defined\\", () => expect(<A />).toBeDefined())
 
   it.todo(\`add meaningful tests 👍\`)
 })

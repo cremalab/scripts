@@ -18,7 +18,7 @@ export function <%= name %>(_: Props) {
   return (
     <View style={styles.container}>
       <Text>You clicked {count} times</Text>
-      <Button onPress={() => setCount(count + 1)} title="<%= name %>" />
+      <Button onPress={() => setCount(count + 1)} title="Click Me" />
     </View>
   )
 }
