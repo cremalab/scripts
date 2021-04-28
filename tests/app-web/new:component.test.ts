@@ -1,3 +1,4 @@
+import { validateTypeScript } from "../utils/validateTypeScript"
 import { cleanup } from "../utils/cleanup"
 import { generateNewComponent } from "../utils/generateNewComponent"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
@@ -14,7 +15,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/A"))
 
-    it("files", (done) => {
+    it("files", () => {
       const tree = printTreeOfNew("components", "A")
       expect(tree).toMatchInlineSnapshot(`
       "A
@@ -25,7 +26,11 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
-      done()
+    })
+
+    it("TypeScript compiles", async () => {
+      const result = await validateTypeScript()
+      expect(result).toEqual("")
     })
 
     it("A.stories.tsx contents", async () => {
@@ -61,7 +66,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/B"))
 
-    it("files", (done) => {
+    it("files", () => {
       const tree = printTreeOfNew("components", "B")
       expect(tree).toMatchInlineSnapshot(`
       "B
@@ -72,7 +77,11 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
-      done()
+    })
+
+    it("TypeScript compiles", async () => {
+      const result = await validateTypeScript()
+      expect(result).toEqual("")
     })
 
     it("B.stories.tsx contents", async () => {
@@ -108,7 +117,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/C"))
 
-    it("files", (done) => {
+    it("files", () => {
       const tree = printTreeOfNew("components", "C")
       expect(tree).toMatchInlineSnapshot(`
       "C
@@ -119,7 +128,11 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
-      done()
+    })
+
+    it("TypeScript compiles", async () => {
+      const result = await validateTypeScript()
+      expect(result).toEqual("")
     })
 
     it("C.stories.tsx contents", async () => {

@@ -5,7 +5,9 @@ import { <%= name %> } from "./<%= name %>"
 <% if(!withExample) { -%>
 
 describe("<%= name %>", () => {
-  it.todo(`<%= name %> needs to be tested`)
+  it("is defined", expect(<%= name %>).toBeDefined)
+
+  it.todo(`add meaningful tests 👍`)
 })
 <% } else if(useState) { -%>
 import { render, fireEvent } from "@testing-library/react-native"

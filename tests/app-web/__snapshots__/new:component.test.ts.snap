@@ -202,7 +202,9 @@ exports[`new:component without example code generates expected A.test.tsx conten
 "import { A } from \\"./A\\"
 
 describe(\\"A\\", () => {
-  it.todo(\`A needs to be tested\`)
+  it(\\"is defined\\", expect(A).toBeDefined)
+
+  it.todo(\`add meaningful tests 👍\`)
 })
 "
 `;

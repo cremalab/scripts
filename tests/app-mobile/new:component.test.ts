@@ -1,4 +1,5 @@
 import spawn from "cross-spawn"
+import { validateTypeScript } from "../utils/validateTypeScript"
 import { cleanup } from "../utils/cleanup"
 import { generateNewComponent } from "../utils/generateNewComponent"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
@@ -31,6 +32,11 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
+    })
+
+    it("TypeScript compiles", async () => {
+      const result = await validateTypeScript()
+      expect(result).toEqual("")
     })
 
     it("A.stories.tsx contents", async () => {
@@ -79,6 +85,11 @@ describe("new:component", () => {
       `)
     })
 
+    it("TypeScript compiles", async () => {
+      const result = await validateTypeScript()
+      expect(result).toEqual("")
+    })
+
     it("B.stories.tsx contents", async () => {
       const fileContents = await printFileContents("./src/components/B/B.stories.tsx")
       expect(fileContents).toMatchSnapshot()
@@ -123,6 +134,11 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
+    })
+
+    it("TypeScript compiles", async () => {
+      const result = await validateTypeScript()
+      expect(result).toEqual("")
     })
 
     it("C.stories.tsx contents", async () => {
