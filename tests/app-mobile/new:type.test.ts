@@ -1,3 +1,4 @@
+import { validateTypeScript } from "../utils/validateTypeScript"
 import { cleanup } from "../utils/cleanup"
 import { generateNewType } from "../utils/generateNewType"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
@@ -20,5 +21,10 @@ describe("new:type", () => {
         └── expo-webpack-config.d.ts
     "
     `)
+  })
+
+  it("TypeScript compiles", async () => {
+    const result = await validateTypeScript()
+    expect(result).toEqual("")
   })
 })

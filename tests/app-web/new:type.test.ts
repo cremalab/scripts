@@ -1,3 +1,4 @@
+import { validateTypeScript } from "../utils/validateTypeScript"
 import { cleanup } from "../utils/cleanup"
 import { generateNewType } from "../utils/generateNewType"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
@@ -18,5 +19,10 @@ describe("new:type", () => {
     └── README.md
     "
     `)
+  })
+
+  it("TypeScript compiles", async () => {
+    const result = await validateTypeScript()
+    expect(result).toEqual("")
   })
 })
