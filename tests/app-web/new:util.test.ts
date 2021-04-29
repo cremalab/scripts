@@ -4,6 +4,7 @@ import { generateNewUtil } from "../utils/generateNewUtil"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
 import { printTreeOfNew } from "../utils/printTreeOfNew"
 import { validateTypeScript } from "../utils/validateTypeScript"
+import { validateUnitTests } from "../utils/validateUnitTests"
 
 beforeAll(navigateToConsumer("app-web"))
 
@@ -41,5 +42,10 @@ describe("new:util", () => {
   it("generates directory with expected `test.ts` contents", async () => {
     const fileContents = await printFileContents("./src/utils/foo/foo.test.ts")
     expect(fileContents).toMatchSnapshot()
+  })
+
+  it("generates working tests", async () => {
+    const result = await validateUnitTests("./src/utils/foo/foo.test.ts")
+    expect(result).toEqual("PASS ./src/utils/foo/foo.test.ts")
   })
 })

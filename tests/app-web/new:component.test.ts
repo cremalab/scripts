@@ -1,8 +1,10 @@
+import { validateTypeScript } from "../utils/validateTypeScript"
 import { cleanup } from "../utils/cleanup"
 import { generateNewComponent } from "../utils/generateNewComponent"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
 import { printFileContents } from "../utils/printFileContents"
 import { printTreeOfNew } from "../utils/printTreeOfNew"
+import { validateUnitTests } from "../utils/validateUnitTests"
 
 beforeAll(navigateToConsumer("app-web"))
 
@@ -14,7 +16,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/A"))
 
-    it("files", (done) => {
+    it("files", () => {
       const tree = printTreeOfNew("components", "A")
       expect(tree).toMatchInlineSnapshot(`
       "A
@@ -25,7 +27,11 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
-      done()
+    })
+
+    it("TypeScript compiles", async () => {
+      const result = await validateTypeScript()
+      expect(result).toEqual("")
     })
 
     it("A.stories.tsx contents", async () => {
@@ -36,6 +42,11 @@ describe("new:component", () => {
     it("A.test.tsx contents", async () => {
       const fileContents = await printFileContents("./src/components/A/A.test.tsx")
       expect(fileContents).toMatchSnapshot()
+    })
+
+    it("A.test.tsx tests pass", async () => {
+      const result = await validateUnitTests("./src/components/A/A.test.tsx")
+      expect(result).toEqual("PASS ./src/components/A/A.test.tsx")
     })
 
     it("A.tsx contents", async () => {
@@ -61,7 +72,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/B"))
 
-    it("files", (done) => {
+    it("files", () => {
       const tree = printTreeOfNew("components", "B")
       expect(tree).toMatchInlineSnapshot(`
       "B
@@ -72,7 +83,11 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
-      done()
+    })
+
+    it("TypeScript compiles", async () => {
+      const result = await validateTypeScript()
+      expect(result).toEqual("")
     })
 
     it("B.stories.tsx contents", async () => {
@@ -83,6 +98,11 @@ describe("new:component", () => {
     it("B.test.tsx contents", async () => {
       const fileContents = await printFileContents("./src/components/B/B.test.tsx")
       expect(fileContents).toMatchSnapshot()
+    })
+
+    it("B.test.tsx tests pass", async () => {
+      const result = await validateUnitTests("./src/components/B/B.test.tsx")
+      expect(result).toEqual("PASS ./src/components/B/B.test.tsx")
     })
 
     it("B.tsx contents", async () => {
@@ -108,7 +128,7 @@ describe("new:component", () => {
     
     afterAll(() => cleanup("./src/components/C"))
 
-    it("files", (done) => {
+    it("files", () => {
       const tree = printTreeOfNew("components", "C")
       expect(tree).toMatchInlineSnapshot(`
       "C
@@ -119,7 +139,11 @@ describe("new:component", () => {
       └── index.ts
       "
       `)
-      done()
+    })
+
+    it("TypeScript compiles", async () => {
+      const result = await validateTypeScript()
+      expect(result).toEqual("")
     })
 
     it("C.stories.tsx contents", async () => {
@@ -130,6 +154,11 @@ describe("new:component", () => {
     it("C.test.tsx contents", async () => {
       const fileContents = await printFileContents("./src/components/C/C.test.tsx")
       expect(fileContents).toMatchSnapshot()
+    })
+
+    it("C.test.tsx tests pass", async () => {
+      const result = await validateUnitTests("./src/components/C/C.test.tsx")
+      expect(result).toEqual("PASS ./src/components/C/C.test.tsx")
     })
 
     it("C.tsx contents", async () => {

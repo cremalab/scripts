@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`new:component with example code and with state generates expected C.stories.tsx contents 1`] = `
-"import React from \\"react\\"
-import decoratorCentered from \\"@storybook/addon-centered\\"
+"import decoratorCentered from \\"@storybook/addon-centered\\"
 import { C } from \\"./C\\"
 
 /**
@@ -22,7 +21,6 @@ export const example = () => <C />
 exports[`new:component with example code and with state generates expected C.test.tsx contents 1`] = `
 "import { C } from \\"./C\\"
 import { render, fireEvent } from \\"@testing-library/react\\"
-import React from \\"react\\"
 
 describe(\\"C\\", () => {
   it(\\"has correct message before clicking\\", () => {
@@ -103,8 +101,7 @@ exports[`new:component with example code and with state generates expected index
 `;
 
 exports[`new:component with example code but without state generates expected B.stories.tsx contents 1`] = `
-"import React from \\"react\\"
-import decoratorCentered from \\"@storybook/addon-centered\\"
+"import decoratorCentered from \\"@storybook/addon-centered\\"
 import { B } from \\"./B\\"
 
 /**
@@ -124,7 +121,6 @@ export const example = () => <B />
 exports[`new:component with example code but without state generates expected B.test.tsx contents 1`] = `
 "import { B } from \\"./B\\"
 import { render } from \\"@testing-library/react\\"
-import React from \\"react\\"
 
 describe(\\"B\\", () => {
   it(\\"name prop is rendered\\", () => {
@@ -185,8 +181,7 @@ exports[`new:component with example code but without state generates expected in
 `;
 
 exports[`new:component without example code generates expected A.stories.tsx contents 1`] = `
-"import React from \\"react\\"
-import decoratorCentered from \\"@storybook/addon-centered\\"
+"import decoratorCentered from \\"@storybook/addon-centered\\"
 import { A } from \\"./A\\"
 
 /**
@@ -205,10 +200,11 @@ export const example = () => <A />
 
 exports[`new:component without example code generates expected A.test.tsx contents 1`] = `
 "import { A } from \\"./A\\"
-import React from \\"react\\"
 
 describe(\\"A\\", () => {
-  it.todo(\`A needs to be tested\`)
+  it(\\"is defined\\", expect(A).toBeDefined)
+
+  it.todo(\`add meaningful tests 👍\`)
 })
 "
 `;
