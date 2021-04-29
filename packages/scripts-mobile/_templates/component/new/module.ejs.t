@@ -11,12 +11,16 @@ export function <%= name %>() {
 import React, { useState } from "react"
 import { Button, StyleSheet, Text, View } from "react-native"
 
-type Props = Readonly<{}>
+interface Props {
+  name: string
+}
 
-export function <%= name %>(_: Props) {
+export function <%= name %>({ name }: Props) {
   const [count, setCount] = useState(0)
+
   return (
     <View style={styles.container}>
+      <Text>Hi, my name is {name}!</Text>
       <Text>You clicked {count} times</Text>
       <Button onPress={() => setCount(count + 1)} title="Click Me" />
     </View>
@@ -30,12 +34,14 @@ const styles = StyleSheet.create({
 import React from "react"
 import { StyleSheet, Text, View } from "react-native"
 
-type Props = Readonly<{}>
+interface Props {
+  name: string
+}
 
-export function <%= name %>(_: Props) {
+export function <%= name %>({ name }: Props) {
   return (
     <View style={styles.container}>
-      <Text><%= name %></Text>
+      <Text>Hi, my name is {name}!</Text>
     </View>
   )
 }
