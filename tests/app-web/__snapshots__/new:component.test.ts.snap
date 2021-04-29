@@ -78,9 +78,10 @@ DESCRIPTION_HERE
 
 ## Directory Structure
 
-- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
-- \`test.tsx\`: Component tests (\`npm run test:unit\`)
-- \`index.tsx\`: Component code
+- \`C.stories.tsx\`: Component stories (\`npm run test:playground\`)
+- \`C.test.tsx\`: Component tests (\`npm run test:unit\`)
+- \`C.tsx\`: Component code
+- \`index.ts\`: Component export
 - \`README.md\`: Component documentation (hey, that's me!)
 
 ## Example
@@ -158,9 +159,10 @@ DESCRIPTION_HERE
 
 ## Directory Structure
 
-- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
-- \`test.tsx\`: Component tests (\`npm run test:unit\`)
-- \`index.tsx\`: Component code
+- \`B.stories.tsx\`: Component stories (\`npm run test:playground\`)
+- \`B.test.tsx\`: Component tests (\`npm run test:unit\`)
+- \`B.tsx\`: Component code
+- \`index.ts\`: Component export
 - \`README.md\`: Component documentation (hey, that's me!)
 
 ## Example
@@ -223,9 +225,10 @@ DESCRIPTION_HERE
 
 ## Directory Structure
 
-- \`stories.tsx\`: Component playground (\`npm run test:playground\`)
-- \`test.tsx\`: Component tests (\`npm run test:unit\`)
-- \`index.tsx\`: Component code
+- \`A.stories.tsx\`: Component stories (\`npm run test:playground\`)
+- \`A.test.tsx\`: Component tests (\`npm run test:unit\`)
+- \`A.tsx\`: Component code
+- \`index.ts\`: Component export
 - \`README.md\`: Component documentation (hey, that's me!)
 
 ## Example
