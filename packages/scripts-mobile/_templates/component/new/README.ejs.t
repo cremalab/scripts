@@ -7,9 +7,10 @@ DESCRIPTION_HERE
 
 ## Directory Structure
 
-- `stories.tsx`: Component playground (`npm run test:playground`)
-- `test.tsx`: Component tests (`npm run test:unit`)
-- `index.tsx`: Component code
+- `<%= name %>.stories.tsx`: Component stories (`npm run test:playground`)
+- `<%= name %>.test.tsx`: Component tests (`npm run test:unit`)
+- `<%= name %>.tsx`: Component code
+- `index.ts`: Component export
 - `README.md`: Component documentation (hey, that's me!)
 
 ## Example
