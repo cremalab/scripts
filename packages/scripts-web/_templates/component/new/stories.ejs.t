@@ -14,4 +14,8 @@ export default {
   decorators: [decoratorCentered],
 }
 
+<% if(withExample) { -%>
+export const example = () => <<%= name %> name="<%= name %>" />
+<% } else { -%>
 export const example = () => <<%= name %> />
+<% } -%>
