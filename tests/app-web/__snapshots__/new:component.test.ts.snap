@@ -19,8 +19,8 @@ export const example = () => <C />
 `;
 
 exports[`new:component with example code and with state generates expected C.test.tsx contents 1`] = `
-"import { C } from \\"./C\\"
-import { render, fireEvent } from \\"@testing-library/react\\"
+"import { fireEvent, render } from \\"@testing-library/react\\"
+import { C } from \\"./C\\"
 
 describe(\\"C\\", () => {
   it(\\"has correct message before clicking\\", () => {
@@ -119,8 +119,8 @@ export const example = () => <B />
 `;
 
 exports[`new:component with example code but without state generates expected B.test.tsx contents 1`] = `
-"import { B } from \\"./B\\"
-import { render } from \\"@testing-library/react\\"
+"import { render } from \\"@testing-library/react\\"
+import { B } from \\"./B\\"
 
 describe(\\"B\\", () => {
   it(\\"name prop is rendered\\", () => {

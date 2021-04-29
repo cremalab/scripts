@@ -1,5 +1,6 @@
 ---
 to: src/components/<%= name %>/<%= name %>.test.tsx
+sh: npx eslint -c ./.eslintrc.js ./src/components/<%= name %> --ext .ts,.tsx --fix --quiet
 ---
 import { <%= name %> } from "./<%= name %>"
 <% if(!withExample) { -%>

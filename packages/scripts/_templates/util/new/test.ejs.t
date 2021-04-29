@@ -1,5 +1,6 @@
 ---
 to: src/utils/<%= name %>/<%= name %>.test.ts
+sh: npx eslint -c ./.eslintrc.js ./src/utils/<%= name %> --ext .ts,.tsx --fix --quiet
 ---
 import { <%= name %> } from "./<%= name %>"
 

@@ -10,9 +10,9 @@ storiesOf(\\"C\\", module).add(\\"example\\", () => <C />)
 `;
 
 exports[`new:component with example code and with state generates expected C.test.tsx contents 1`] = `
-"import { C } from \\"./C\\"
-import { render, fireEvent } from \\"@testing-library/react-native\\"
+"import { fireEvent, render } from \\"@testing-library/react-native\\"
 import React from \\"react\\"
+import { C } from \\"./C\\"
 
 describe(\\"C\\", () => {
   it(\\"has correct message before clicking\\", () => {
@@ -106,9 +106,9 @@ storiesOf(\\"B\\", module).add(\\"example\\", () => <B />)
 `;
 
 exports[`new:component with example code but without state generates expected B.test.tsx contents 1`] = `
-"import { B } from \\"./B\\"
-import { render } from \\"@testing-library/react-native\\"
+"import { render } from \\"@testing-library/react-native\\"
 import React from \\"react\\"
+import { B } from \\"./B\\"
 
 describe(\\"B\\", () => {
   it(\\"name prop is rendered\\", () => {
@@ -185,8 +185,8 @@ storiesOf(\\"A\\", module).add(\\"example\\", () => <A />)
 `;
 
 exports[`new:component without example code generates expected A.test.tsx contents 1`] = `
-"import { A } from \\"./A\\"
-import React from \\"react\\"
+"import React from \\"react\\"
+import { A } from \\"./A\\"
 
 describe(\\"A\\", () => {
   it(\\"is defined\\", () => expect(<A />).toBeDefined())
