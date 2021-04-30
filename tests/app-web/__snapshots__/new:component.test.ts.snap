@@ -14,21 +14,33 @@ export default {
   decorators: [decoratorCentered],
 }
 
-export const example = () => <C />
+export const example = () => <C name=\\"C\\" />
 "
 `;
 
 exports[`new:component with example code and with state generates expected C.test.tsx contents 1`] = `
-"import { C } from \\"./C\\"
-import { render, fireEvent } from \\"@testing-library/react\\"
+"import { fireEvent, render } from \\"@testing-library/react\\"
+import { C } from \\"./C\\"
 
 describe(\\"C\\", () => {
+  it(\\"name prop is rendered\\", () => {
+    // Arrange
+    const message = \\"Hi, my name is C!\\"
+
+    // Act
+    const { getByText } = render(<C name=\\"C\\" />)
+    const received = getByText(message)
+
+    // Assert
+    expect(received).toBeDefined()
+  })
+
   it(\\"has correct message before clicking\\", () => {
     // Arrange
     const message = \\"You clicked 0 times\\"
 
     // Act
-    const { getByText } = render(<C />)
+    const { getByText } = render(<C name=\\"C\\" />)
     const received = getByText(message)
 
     // Assert
@@ -41,7 +53,7 @@ describe(\\"C\\", () => {
     const message = \\"You clicked 1 times\\"
 
     // Act
-    const { getByText } = render(<C />)
+    const { getByText } = render(<C name=\\"C\\" />)
     const button = getByText(buttonText)
     fireEvent.click(button)
     const received = getByText(message)
@@ -56,13 +68,16 @@ describe(\\"C\\", () => {
 exports[`new:component with example code and with state generates expected C.tsx contents 1`] = `
 "import { useState } from \\"react\\"
 
-type Props = Readonly<{}>
+interface Props {
+  name: string
+}
 
-export function C(_: Props) {
+export function C({ name }: Props) {
   const [count, setCount] = useState(0)
 
   return (
     <div>
+      <p>Hi, my name is {name}!</p>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click Me</button>
     </div>
@@ -115,22 +130,22 @@ export default {
   decorators: [decoratorCentered],
 }
 
-export const example = () => <B />
+export const example = () => <B name=\\"B\\" />
 "
 `;
 
 exports[`new:component with example code but without state generates expected B.test.tsx contents 1`] = `
-"import { B } from \\"./B\\"
-import { render } from \\"@testing-library/react\\"
+"import { render } from \\"@testing-library/react\\"
+import { B } from \\"./B\\"
 
 describe(\\"B\\", () => {
   it(\\"name prop is rendered\\", () => {
     // Arrange
-    const name = \\"B\\"
+    const message = \\"Hi, my name is B!\\"
 
     // Act
-    const { getByText } = render(<B />)
-    const received = getByText(name)
+    const { getByText } = render(<B name=\\"B\\" />)
+    const received = getByText(message)
 
     // Assert
     expect(received).toBeDefined()
@@ -140,12 +155,14 @@ describe(\\"B\\", () => {
 `;
 
 exports[`new:component with example code but without state generates expected B.tsx contents 1`] = `
-"type Props = Readonly<{}>
+"interface Props {
+  name: string
+}
 
-export function B(_: Props) {
+export function B({ name }: Props) {
   return (
     <div>
-      <p>B</p>
+      <p>Hi, my name is {name}!</p>
     </div>
   )
 }

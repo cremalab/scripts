@@ -8,25 +8,30 @@ export function <%= name %>() {
 <% } else if(useState) { -%>
 import { useState } from "react"
 
-type Props = Readonly<{}>
+interface Props {
+  name: string
+}
 
-export function <%= name %>(_: Props) {
+export function <%= name %>({ name }: Props) {
   const [count, setCount] = useState(0)
 
   return (
     <div>
+      <p>Hi, my name is {name}!</p>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click Me</button>
     </div>
   )
 }
 <% } else { -%>
-type Props = Readonly<{}>
+interface Props {
+  name: string
+}
 
-export function <%= name %>(_: Props) {
+export function <%= name %>({ name }: Props) {
   return (
     <div>
-      <p><%= name %></p>
+      <p>Hi, my name is {name}!</p>
     </div>
   )
 }
