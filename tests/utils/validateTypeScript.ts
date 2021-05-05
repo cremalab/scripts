@@ -1,6 +1,6 @@
 import spawn from "cross-spawn"
 
-export const validateTypeScript = () => {
+export const validateTypeScript = (): Promise<string> => {
   return new Promise<string>((resolve) => {
     const child = spawn("tsc", {
       stdio: "pipe",

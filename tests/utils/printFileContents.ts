@@ -1,6 +1,6 @@
 import spawn from "cross-spawn"
 
-export const printFileContents = (filePath: string) => {
+export const printFileContents = (filePath: string): Promise<string> => {
   return new Promise<string>((resolve, reject) => {
     const child = spawn("echo", [`"$(cat ${filePath})"`], {
       stdio: "pipe",

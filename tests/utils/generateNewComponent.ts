@@ -10,7 +10,7 @@ export const generateNewComponent = ({
   name,
   withExample,
   withState,
-}: Opts) => {
+}: Opts): Promise<void> => {
   /**
    * Tracking message match counts
    * ------------------------------

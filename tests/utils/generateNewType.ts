@@ -1,6 +1,6 @@
 import spawn from "cross-spawn"
 
-export const generateNewType = () => {
+export const generateNewType = (): Promise<void> => {
   return new Promise((resolve) => {
     const child = spawn("npm", ["run", "new:type"], {
       stdio: "pipe",
