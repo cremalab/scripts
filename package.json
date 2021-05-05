@@ -18,7 +18,7 @@
     "ci": "bash ./shell/ci.sh",
     "pack": "lerna run pack --stream",
     "test:lint:fix": "npm run test:lint -- --fix",
-    "test:lint": "eslint -c ./.eslintrc.js 'packages/**/*.{ts,tsx}'",
+    "test:lint": "eslint --config .eslintrc.js .",
     "test:pack": "lerna run test:pack --stream",
     "test:unit:watch": "npm run test:unit -- --watch",
     "test:unit": "jest --forceExit --detectOpenHandles --runInBand",
