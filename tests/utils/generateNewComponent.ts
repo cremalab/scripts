@@ -1,12 +1,16 @@
 import spawn from "cross-spawn"
 
 type Opts = {
-  name: string,
+  name: string
   withExample: boolean
   withState: boolean
 }
 
-export const generateNewComponent = ({ name, withExample, withState }: Opts) => {
+export const generateNewComponent = ({
+  name,
+  withExample,
+  withState,
+}: Opts) => {
   /**
    * Tracking message match counts
    * ------------------------------
@@ -26,7 +30,7 @@ export const generateNewComponent = ({ name, withExample, withState }: Opts) => 
 
     child.stdout?.on("data", (data) => {
       const message: string = data.toString()
-      
+
       const messageComponentName = message.includes(`Component name:`)
       if (messageComponentName && messageComponentNameCount === 0) {
         messageComponentNameCount += 1
@@ -50,7 +54,7 @@ export const generateNewComponent = ({ name, withExample, withState }: Opts) => 
       const messageWithState = message.includes(
         `Did you want to include useState in the example <${name} />?`,
       )
-      
+
       if (messageWithState && messageWithStateCount === 0) {
         messageWithStateCount += 1
         if (withState) {
