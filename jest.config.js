@@ -1,9 +1,9 @@
 module.exports = {
-  preset: 'ts-jest',
+  preset: "ts-jest",
   roots: ["<rootDir>/tests"],
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
-  testEnvironment: 'node',
+  testEnvironment: "node",
   testTimeout: 10000,
 }

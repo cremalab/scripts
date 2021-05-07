@@ -1,7 +1,7 @@
-import { printFileContents } from "../utils/printFileContents"
 import { cleanup } from "../utils/cleanup"
 import { generateNewUtil } from "../utils/generateNewUtil"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
+import { printFileContents } from "../utils/printFileContents"
 import { printTreeOfNew } from "../utils/printTreeOfNew"
 import { validateTypeScript } from "../utils/validateTypeScript"
 import { validateUnitTests } from "../utils/validateUnitTests"

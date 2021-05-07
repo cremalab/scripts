@@ -1,7 +1,7 @@
-import { printFileContents } from "../utils/printFileContents"
 import { cleanup } from "../utils/cleanup"
 import { generateNewUtil } from "../utils/generateNewUtil"
 import { navigateToConsumer } from "../utils/navigateToConsumer"
+import { printFileContents } from "../utils/printFileContents"
 import { printTreeOfNew } from "../utils/printTreeOfNew"
 import { validateTypeScript } from "../utils/validateTypeScript"
 import { validateUnitTests } from "../utils/validateUnitTests"
@@ -28,7 +28,7 @@ describe("new:util", () => {
     const result = await validateTypeScript()
     expect(result).toEqual("")
   })
-  
+
   it("generates directory with expected `index.ts` contents", async () => {
     const fileContents = await printFileContents("./src/utils/foo/index.ts")
     expect(fileContents).toMatchSnapshot()
