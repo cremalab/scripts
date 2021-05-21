@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`new:type generates type file with expected contents 1`] = `
+"/**
+ * Foo
+ * ------------------------------------------------
+ * DESCRIPTION_HERE
+ */
+
+export interface Foo {}
+"
+`;

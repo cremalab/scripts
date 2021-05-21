@@ -32,7 +32,8 @@
     "hygen": "^6.0.0"
   },
   "devDependencies": {
-    "@types/cross-spawn": "6.0.2"
+    "@types/cross-spawn": "6.0.2",
+    "@types/inflection": "^1.5.28"
   },
   "repository": {
     "directory": "packages/scripts",
