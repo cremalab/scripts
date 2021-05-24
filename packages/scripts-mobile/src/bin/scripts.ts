@@ -21,7 +21,7 @@ const script = scriptIndex === -1 ? args[0] : args[scriptIndex]
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : []
 
 const commands = [
-  { args: ["new", "component"], binary: "cremalab-scripts-web" },
+  { args: ["new", "component"], binary: "cremalab-scripts-mobile" },
   { args: ["new", "type"], binary: "cremalab-scripts" },
   { args: ["new", "util"], binary: "cremalab-scripts" },
 ]
@@ -30,7 +30,7 @@ const command = commands.find(
   (com) => com.args[0] === args[0] && com.args[1] === args[1],
 )
 
-if (command && command.binary === "cremalab-scripts-web") {
+if (command && command.binary === "cremalab-scripts-mobile") {
   const result = spawn.sync(
     "node",
     nodeArgs
