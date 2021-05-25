@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '16.x'
+      - run: npm i -g npm@7
       - run: npm ci
       - run: sudo npm run ci:mobile
   app-web:
@@ -33,5 +34,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '16.x'
+      - run: npm i -g npm@7
       - run: npm ci
       - run: sudo npm run ci:web
