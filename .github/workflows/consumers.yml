@@ -17,9 +17,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
-      - run: npm i -g npm@7
       - run: npm ci
-      - run: sudo npm run ci:mobile
+      - run: npm run ci:mobile
   app-web:
     name: cremalab/app-web
     runs-on: ubuntu-latest
@@ -34,6 +33,5 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
-      - run: npm i -g npm@7
       - run: npm ci
-      - run: sudo npm run ci:web
+      - run: npm run ci:web
