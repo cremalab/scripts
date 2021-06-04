@@ -1,6 +1,10 @@
 name: Consumers
 
-on: [push]
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
 
 jobs:
   app-mobile:
