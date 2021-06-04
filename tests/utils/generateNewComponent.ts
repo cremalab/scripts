@@ -34,13 +34,11 @@ export const generateNewComponent = ({
       const messageComponentName = message.includes(`Component name:`)
       if (messageComponentName && messageComponentNameCount === 0) {
         messageComponentNameCount += 1
-        child.stdin?.write(name + "\n")
+        child.stdin?.write(`${name}\n`)
       }
 
       // Answer the question about example code
-      const messageWithExample = message.includes(
-        `Did you want to generate <${name} /> with example code?`,
-      )
+      const messageWithExample = message.includes(`with example code?`)
       if (messageWithExample && messageWithExampleCount == 0) {
         messageWithExampleCount += 1
         if (withExample) {
@@ -52,7 +50,7 @@ export const generateNewComponent = ({
 
       // Answer the question about useState
       const messageWithState = message.includes(
-        `Did you want to include useState in the example <${name} />?`,
+        `Did you want to include useState in the example`,
       )
 
       if (messageWithState && messageWithStateCount === 0) {

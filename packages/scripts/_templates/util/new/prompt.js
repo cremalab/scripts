@@ -9,7 +9,7 @@ module.exports = {
         message: "What's the name of the utility?",
       })
       .then(({ name }) => ({
-        name: nameFormat(name, true),
+        name: nameFormat(name, false),
       }))
   },
 }

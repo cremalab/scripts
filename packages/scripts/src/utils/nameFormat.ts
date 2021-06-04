@@ -1,4 +1,4 @@
-import i from "inflection"
+import camelcase from "camelcase"
 
-export const nameFormat = (name: string, lowFirstLetter = false): string =>
-  i.camelize(name.trim(), lowFirstLetter)
+export const nameFormat = (name: string, pascalCase: boolean): string =>
+  camelcase(name.trim(), { pascalCase })

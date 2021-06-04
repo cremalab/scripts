@@ -28,6 +28,7 @@
     "access": "public"
   },
   "dependencies": {
+    "camelcase": "6.2.0",
     "cross-spawn": "7.0.3",
     "hygen": "6.1.0"
   },

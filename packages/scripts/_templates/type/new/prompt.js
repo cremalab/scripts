@@ -9,7 +9,7 @@ module.exports = {
         message: "What's the name of the type?",
       })
       .then(({ name }) => ({
-        name: nameFormat(name),
+        name: nameFormat(name, true),
       }))
   },
 }

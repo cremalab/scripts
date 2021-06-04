@@ -16,6 +16,31 @@ afterAll(() =>
 )
 
 describe("new:component", () => {
+  describe("name formatting", () => {
+    beforeAll(() =>
+      generateNewComponent({
+        name: "  foo BAR    baz      ",
+        withExample: false,
+        withState: false,
+      }),
+    )
+
+    afterAll(() => cleanup("./src/components/FooBarBaz"))
+
+    it("handles trimming, weird spacing, and capitalization", () => {
+      const tree = printTreeOfNew("components", "FooBarBaz")
+      expect(tree).toMatchInlineSnapshot(`
+      "FooBarBaz
+      ├── FooBarBaz.stories.tsx
+      ├── FooBarBaz.test.tsx
+      ├── FooBarBaz.tsx
+      ├── README.md
+      └── index.ts
+      "
+      `)
+    })
+  })
+
   describe("without example code generates expected", () => {
     beforeAll(() =>
       generateNewComponent({ name: "A", withExample: false, withState: false }),
