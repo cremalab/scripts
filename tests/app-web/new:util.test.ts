@@ -9,7 +9,7 @@ import { validateUnitTests } from "../utils/validateUnitTests"
 beforeAll(navigateToConsumer("app-web"))
 
 describe("new:util", () => {
-  beforeAll(generateNewUtil)
+  beforeAll(() => generateNewUtil(" foo ")) // Whitespace intentional
 
   afterAll(() => cleanup("./src/utils/foo"))
 
