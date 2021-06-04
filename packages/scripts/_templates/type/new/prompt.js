@@ -1,4 +1,4 @@
-const i = require("inflection")
+const { nameFormat } = require("../../../dist/utils/nameFormat")
 
 module.exports = {
   prompt: ({ prompter }) => {
@@ -9,7 +9,7 @@ module.exports = {
         message: "What's the name of the type?",
       })
       .then(({ name }) => ({
-        name: i.camelize(name, false),
+        name: nameFormat(name, true),
       }))
   },
 }

@@ -13,8 +13,12 @@ jobs:
       - uses: actions/checkout@v2
         with: 
           submodules: 'recursive'
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '15.x'
       - run: npm ci
-      - run: sudo npm run ci:mobile
+      - run: npm run ci:mobile
   app-web:
     name: cremalab/app-web
     runs-on: ubuntu-latest
@@ -25,5 +29,9 @@ jobs:
       - uses: actions/checkout@v2
         with: 
           submodules: 'recursive'
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '15.x'
       - run: npm ci
-      - run: sudo npm run ci:web
+      - run: npm run ci:web

@@ -1,4 +1,4 @@
-const i = require("inflection")
+const { nameFormat } = require("@cremalab/scripts")
 
 module.exports = {
   prompt: ({ prompter }) => {
@@ -9,7 +9,7 @@ module.exports = {
         message: "Component name:",
       })
       .then(({ name: nameRaw }) => {
-        const name = i.camelize(nameRaw || "Example", false)
+        const name = nameFormat(nameRaw, true)
 
         return prompter
           .prompt({
