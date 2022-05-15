@@ -44,7 +44,7 @@
     "prettier": "2.4.1",
     "tree-node-cli": "1.4.0",
     "ts-jest": "27.0.5",
-    "typescript": "4.4.3"
+    "typescript": "4.6.4"
   },
   "name": "scripts"
 }
